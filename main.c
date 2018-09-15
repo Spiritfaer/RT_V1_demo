@@ -17,6 +17,8 @@ int		main(int argc, char **argv)
 	t_master	master;
 	master.init_flag = START;
 	master.error_flag = WORK;
+	master.sdl.render = NULL;
+	master.sdl.winndow = NULL;
 	if (argc != 2)
 		return (0);
 	if (ft_parser(argv[1], &master) == BROKEN)

@@ -24,7 +24,7 @@ enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE, MAXOBJ};
 enum e_base		{NAME, WINDOW, RENDER, MAXBASE};
 enum e_xyz		{X, Y, Z};
 enum e_render	{SOFTWARE, ACCELERATED};
-enum e_pars		{START, SCENE, OBJECT, VAR};
+enum e_pars		{START, SCENE, OBJECT, END};
 enum e_error	{BROKEN, WORK};
 
 # define MAX_SCREEN_WIDTH 1440
@@ -66,6 +66,7 @@ typedef struct		s_v3d
 typedef struct		s_cam
 {
 	t_v3d			position;
+	t_v3d			rotate;
 	t_v2i			window_size;
 	int8_t			render_flag;
 }					t_cam;
@@ -98,7 +99,7 @@ typedef struct		s_sdl
 {
 	SDL_Window		*winndow;
 	SDL_Renderer	*render;
-	SDL_Event		*event;
+	SDL_Event		event;
 	char			*win_name;
 	int32_t			screen_width;
 	int32_t			screen_height;

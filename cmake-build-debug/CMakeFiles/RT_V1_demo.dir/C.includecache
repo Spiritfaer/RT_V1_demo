@@ -602,25 +602,9 @@ close_code.h
 rt_v1.h
 /Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
 
-/Users/istalevs/CLionProjects/RT_V1_demo/foo.c
-rt_v1.h
-/Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
-
-/Users/istalevs/CLionProjects/RT_V1_demo/init.c
-struct.h
-/Users/istalevs/CLionProjects/RT_V1_demo/struct.h
-
-/Users/istalevs/CLionProjects/RT_V1_demo/main.c
-rt_v1.h
-/Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
-
 /Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
 struct.h
 /Users/istalevs/CLionProjects/RT_V1_demo/struct.h
-
-/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c
-rt_v1.h
-/Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
 
 /Users/istalevs/CLionProjects/RT_V1_demo/struct.h
 stdio.h
