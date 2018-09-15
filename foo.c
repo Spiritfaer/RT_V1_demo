@@ -107,3 +107,28 @@ void		ft_split_del(char **head)
 	free(head);
 	head = NULL;
 }
+
+uint8_t		ft_check_set_scene(const uint8_t *set)
+{
+	uint16_t	i;
+
+	i = 0;
+	while (i < MAXBASE)
+	{
+		if (set[i++] == BROKEN)
+			return (BROKEN);
+	}
+	return (WORK);
+}
+
+void		ft_print_split(char **split)
+{
+	int i;
+
+	i = 0;
+	while (split[i])
+	{
+		printf("%s\n", split[i]);
+		i++;
+	}
+}

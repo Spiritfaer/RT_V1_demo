@@ -1,0 +1,10 @@
+scEne	{
+	name	{ some-name-for-scene }
+	window	{ 780 640 }
+	render	{ accelerated }
+
+	camera	{
+    	position { 0.0 0.0 0.0 }
+    	rotate { 0.0 0.0 0.0 }
+    }
+}

@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/istalevs/CLionProjects/RT_V1_demo/file.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/file.c.o"
+  "/Users/istalevs/CLionProjects/RT_V1_demo/foo.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/foo.c.o"
+  "/Users/istalevs/CLionProjects/RT_V1_demo/init.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/init.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/main.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/main.c.o"
+  "/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_scene.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

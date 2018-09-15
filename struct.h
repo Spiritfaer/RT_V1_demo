@@ -20,15 +20,22 @@
 # include "SDL.h"
 # include "libft.h"
 
-enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE};
+enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE, MAXOBJ};
+enum e_base		{NAME, WINDOW, RENDER, MAXBASE};
 enum e_xyz		{X, Y, Z};
 enum e_render	{SOFTWARE, ACCELERATED};
-enum e_pars		{SCENE, OBJECT, VAR};
+enum e_pars		{START, SCENE, OBJECT, VAR};
 enum e_error	{BROKEN, WORK};
 
-# define DEF_SCREEN_WIDTH 1440
-# define DEF_SCREEN_HEIGHT 840
+# define MAX_SCREEN_WIDTH 1440
+# define MIN_SCREEN_WIDTH 640
+# define MAX_SCREEN_HEIGHT 840
+# define MIN_SCREEN_HEIGHT 480
 # define ERROR_FD 1
+# define POS 1
+# define ROT 2
+# define COL 4
+# define SCA 8
 
 typedef struct		s_v2i
 {
@@ -67,6 +74,7 @@ typedef struct 		s_light
 {
 	t_v3d			position;
 	SDL_Color		color;
+	struct s_light	*next;
 }					t_light;
 
 typedef struct		s_object
@@ -74,14 +82,16 @@ typedef struct		s_object
 	int8_t			type;
 	t_v3d			position;
 	t_v3d			scale;
+	SDL_Color		color;
+	struct s_object	*next;
 }					t_object;
 
 typedef struct 		s_scene
 {
 	t_list			*head;
 	t_cam			cam;
-	t_light			**light;
-	t_object		**object;
+	t_light			*light;
+	t_object		*object;
 }					t_scene;
 
 typedef struct		s_sdl
@@ -89,12 +99,18 @@ typedef struct		s_sdl
 	SDL_Window		*winndow;
 	SDL_Renderer	*render;
 	SDL_Event		*event;
+	char			*win_name;
+	int32_t			screen_width;
+	int32_t			screen_height;
+	uint8_t			render_flag;
 }					t_sdl;
 
 typedef struct		s_master
 {
 	t_sdl			sdl;
 	t_scene			scene;
+	int8_t			init_flag;
+	uint8_t			error_flag;
 }					t_master;
 
 # endif

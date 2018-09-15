@@ -15,13 +15,25 @@
 
 #include "struct.h"
 
-void	ft_end(t_sdl *sdl);
-int8_t	ft_init(t_sdl *sdl);
+void		ft_end(t_sdl *sdl);
+int8_t		ft_init(t_sdl *sdl);
 void		ft_revers_list(t_list **head);
+void		ft_print_split(char **split);
 uint16_t	ft_count_list(t_list *head);
-char	**ft_space_split(char const *s);
-int		ft_count_words(const char *s);
+char		**ft_space_split(char const *s);
+int			ft_count_words(const char *s);
 void		ft_split_del(char **head);
 t_list		*open_file(const char *file);
-int8_t	ft_parser(const char *file, t_master *master);
+int8_t		ft_parser(const char *file, t_master *master);
+
+void		ft_set_base(t_master *master, char *split);
+uint8_t		ft_set_name(t_master *master, char **split, uint16_t *i);
+uint8_t		ft_set_win(t_master *master, char **split, uint16_t *i);
+uint8_t		ft_set_render(t_master *master, char **split, uint16_t *i);
+void 		ft_set_scene(t_master *master, char **split, uint16_t *i);
+
+uint8_t		ft_check_set_scene(const uint8_t *set);
+
+
+
 #endif

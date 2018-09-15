@@ -123,6 +123,87 @@ RT_V1_demo/fast:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/build
 .PHONY : RT_V1_demo/fast
 
+file.o: file.c.o
+
+.PHONY : file.o
+
+# target to build an object file
+file.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/file.c.o
+.PHONY : file.c.o
+
+file.i: file.c.i
+
+.PHONY : file.i
+
+# target to preprocess a source file
+file.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/file.c.i
+.PHONY : file.c.i
+
+file.s: file.c.s
+
+.PHONY : file.s
+
+# target to generate assembly for a file
+file.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/file.c.s
+.PHONY : file.c.s
+
+foo.o: foo.c.o
+
+.PHONY : foo.o
+
+# target to build an object file
+foo.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/foo.c.o
+.PHONY : foo.c.o
+
+foo.i: foo.c.i
+
+.PHONY : foo.i
+
+# target to preprocess a source file
+foo.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/foo.c.i
+.PHONY : foo.c.i
+
+foo.s: foo.c.s
+
+.PHONY : foo.s
+
+# target to generate assembly for a file
+foo.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/foo.c.s
+.PHONY : foo.c.s
+
+init.o: init.c.o
+
+.PHONY : init.o
+
+# target to build an object file
+init.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/init.c.o
+.PHONY : init.c.o
+
+init.i: init.c.i
+
+.PHONY : init.i
+
+# target to preprocess a source file
+init.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/init.c.i
+.PHONY : init.c.i
+
+init.s: init.c.s
+
+.PHONY : init.s
+
+# target to generate assembly for a file
+init.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/init.c.s
+.PHONY : init.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,6 +231,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/main.c.s
 .PHONY : main.c.s
 
+set_scene.o: set_scene.c.o
+
+.PHONY : set_scene.o
+
+# target to build an object file
+set_scene.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_scene.c.o
+.PHONY : set_scene.c.o
+
+set_scene.i: set_scene.c.i
+
+.PHONY : set_scene.i
+
+# target to preprocess a source file
+set_scene.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_scene.c.i
+.PHONY : set_scene.c.i
+
+set_scene.s: set_scene.c.s
+
+.PHONY : set_scene.s
+
+# target to generate assembly for a file
+set_scene.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_scene.c.s
+.PHONY : set_scene.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RT_V1_demo"
+	@echo "... file.o"
+	@echo "... file.i"
+	@echo "... file.s"
+	@echo "... foo.o"
+	@echo "... foo.i"
+	@echo "... foo.s"
+	@echo "... init.o"
+	@echo "... init.i"
+	@echo "... init.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... set_scene.o"
+	@echo "... set_scene.i"
+	@echo "... set_scene.s"
 .PHONY : help
 
 

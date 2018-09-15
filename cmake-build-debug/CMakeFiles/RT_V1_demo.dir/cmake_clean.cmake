@@ -1,5 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RT_V1_demo.dir/main.c.o"
+  "CMakeFiles/RT_V1_demo.dir/file.c.o"
+  "CMakeFiles/RT_V1_demo.dir/foo.c.o"
+  "CMakeFiles/RT_V1_demo.dir/init.c.o"
+  "CMakeFiles/RT_V1_demo.dir/set_scene.c.o"
   "RT_V1_demo.pdb"
   "RT_V1_demo"
 )

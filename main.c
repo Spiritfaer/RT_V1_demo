@@ -15,6 +15,8 @@
 int		main(int argc, char **argv)
 {
 	t_master	master;
+	master.init_flag = START;
+	master.error_flag = WORK;
 	if (argc != 2)
 		return (0);
 	if (ft_parser(argv[1], &master) == BROKEN)
@@ -24,6 +26,6 @@ int		main(int argc, char **argv)
 		printf("WORK BITCH\n");
 	}
 	ft_end(&master.sdl);
-	system("leaks -q RT_V1_demo");
+//	system("leaks -q RT_V1_demo");
 	return 0;
 }

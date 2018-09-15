@@ -22,7 +22,7 @@ int8_t	ft_init(t_sdl *sdl)
 	else
 	{
 		sdl->winndow = SDL_CreateWindow("RT_V1", 150, 150,
-										DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+										MIN_SCREEN_WIDTH, MIN_SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (!sdl->winndow && result--)
 			ft_putendl_fd(SDL_GetError(), 2);
 		else
