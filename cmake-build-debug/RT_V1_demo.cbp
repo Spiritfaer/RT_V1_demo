@@ -108,6 +108,9 @@
 		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h">
 			<Option target="RT_V1_demo"/>
 		</Unit>
+		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_cam.c">
+			<Option target="RT_V1_demo"/>
+		</Unit>
 		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c">
 			<Option target="RT_V1_demo"/>
 		</Unit>

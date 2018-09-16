@@ -37,5 +37,8 @@ void	to_lower(char *c);
 uint8_t	set_render(char **current);
 void	set_window(char **current, t_master *master);
 int8_t	find_scene(char **current, char *needle, t_master *master);
+void	ft_set_v3d(char **current, t_v3d *vector);
+void	ft_camera(char **current, t_master *master);
+int8_t	ft_current_step(char **current, char *str);
 
 #endif

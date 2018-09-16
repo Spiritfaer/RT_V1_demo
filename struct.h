@@ -74,6 +74,7 @@ typedef struct		s_cam
 {
 	t_v3d			position;
 	t_v3d			rotate;
+	int16_t			init_flag;
 }					t_cam;
 
 typedef struct 		s_light

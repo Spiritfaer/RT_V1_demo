@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/istalevs/CLionProjects/RT_V1_demo/init.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/init.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/main.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/main.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/pars_set.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/pars_set.c.o"
+  "/Users/istalevs/CLionProjects/RT_V1_demo/set_cam.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_cam.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_scene.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

@@ -14,19 +14,15 @@
 
 static void		ft_name(char **current, t_master *master, int16_t *init_flag)
 {
-	*current += ft_strlen("name");
-	*current = find(*current);
+	ft_current_step(current, "name");
 	if (**current == '{')
 	{
-		(*current)++;
-		*current = find(*current);
+		ft_current_step(current, NULL);
 		master->sdl.win_name = get_word(*current);
-		*current += ft_strlen(master->sdl.win_name);
-		*current = find(*current);
+		ft_current_step(current, master->sdl.win_name);
 		if (**current == '}')
 		{
-			(*current)++;
-			*current = find(*current);
+			ft_current_step(current, NULL);
 			*init_flag |= SET_NAME;
 		}
 		else
@@ -38,18 +34,15 @@ static void		ft_name(char **current, t_master *master, int16_t *init_flag)
 
 static void		ft_window(char **current, t_master *master, int16_t *init_flag)
 {
-	*current += ft_strlen("window");
-	*current = find(*current);
+	ft_current_step(current, "window");
 	if (**current == '{')
 	{
-		(*current)++;
-		*current = find(*current);
+		ft_current_step(current, NULL);
 		set_window(current, master);
 		if (**current == '}')
 		{
 			*init_flag |= SET_WINDOWS;
-			(*current)++;
-			*current = find(*current);
+			ft_current_step(current, NULL);
 		}
 		else
 			master->error_flag = BROKEN;
@@ -60,18 +53,15 @@ static void		ft_window(char **current, t_master *master, int16_t *init_flag)
 
 static void		ft_render(char **current, t_master *master, int16_t *init_flag)
 {
-	*current += ft_strlen("render");
-	*current = find(*current);
+	ft_current_step(current, "render");
 	if (**current == '{')
 	{
-		(*current)++;
-		*current = find(*current);
+		ft_current_step(current, NULL);
 		master->sdl.render_flag = set_render(current);
 		if (**current == '}')
 		{
 			*init_flag |= SET_RENDER;
-			(*current)++;
-			*current = find(*current);
+			ft_current_step(current, NULL);
 		}
 		else
 			master->error_flag = BROKEN;

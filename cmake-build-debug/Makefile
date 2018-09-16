@@ -258,6 +258,33 @@ pars_set.c.s:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/pars_set.c.s
 .PHONY : pars_set.c.s
 
+set_cam.o: set_cam.c.o
+
+.PHONY : set_cam.o
+
+# target to build an object file
+set_cam.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_cam.c.o
+.PHONY : set_cam.c.o
+
+set_cam.i: set_cam.c.i
+
+.PHONY : set_cam.i
+
+# target to preprocess a source file
+set_cam.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_cam.c.i
+.PHONY : set_cam.c.i
+
+set_cam.s: set_cam.c.s
+
+.PHONY : set_cam.s
+
+# target to generate assembly for a file
+set_cam.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_cam.c.s
+.PHONY : set_cam.c.s
+
 set_scene.o: set_scene.c.o
 
 .PHONY : set_scene.o
@@ -309,6 +336,9 @@ help:
 	@echo "... pars_set.o"
 	@echo "... pars_set.i"
 	@echo "... pars_set.s"
+	@echo "... set_cam.o"
+	@echo "... set_cam.i"
+	@echo "... set_cam.s"
 	@echo "... set_scene.o"
 	@echo "... set_scene.i"
 	@echo "... set_scene.s"
