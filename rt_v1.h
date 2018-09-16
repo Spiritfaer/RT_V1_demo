@@ -26,14 +26,16 @@ void		ft_split_del(char **head);
 t_list		*open_file(const char *file);
 int8_t		ft_parser(const char *file, t_master *master);
 
-void		ft_set_base(t_master *master, char *split);
-uint8_t		ft_set_name(t_master *master, char **split, uint16_t *i);
-uint8_t		ft_set_win(t_master *master, char **split, uint16_t *i);
-uint8_t		ft_set_render(t_master *master, char **split, uint16_t *i);
-void 		ft_set_scene(t_master *master, char **split, uint16_t *i);
+
 
 uint8_t		ft_check_set_scene(const uint8_t *set);
 
-
+char	*get_word(char *end);
+char	*find(const char *str);
+char	*get_list_contenr(t_list *head);
+void	to_lower(char *c);
+uint8_t	set_render(char **current);
+void	set_window(char **current, t_master *master);
+void	pars_scene(char **current, t_master *master);
 
 #endif

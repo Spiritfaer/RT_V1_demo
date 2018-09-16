@@ -28,6 +28,6 @@ int		main(int argc, char **argv)
 		printf("WORK BITCH\n");
 	}
 	ft_end(&master.sdl);
-//	system("leaks -q RT_V1_demo");
+	system("leaks -q RT_V1_demo");
 	return 0;
 }

@@ -132,3 +132,54 @@ void		ft_print_split(char **split)
 		i++;
 	}
 }
+
+char	*get_word(char *end)
+{
+	char *start;
+	char *name;
+
+	start = end;
+	while (!ft_isspase(*end))
+		end++;
+	name = strndup(start, end - start);
+	return (name);
+}
+
+char *find(const char *str)
+{
+	char *tmp;
+
+	tmp = (char*)str;
+	while (ft_isspase(*tmp))
+		tmp++;
+	return (tmp);
+}
+
+char	*get_list_contenr(t_list *head)
+{
+	t_list		*tmp;
+	uint32_t	size;
+	char		*new_str;
+
+	tmp = head;
+	size = 0;
+	while (tmp)
+	{
+		size += (uint32_t)tmp->content_size;
+		tmp = tmp->next;
+	}
+	new_str = ft_strnew(size);
+	tmp = head;
+	while (tmp)
+	{
+		ft_strcat(new_str, tmp->content);
+		tmp = tmp->next;
+	}
+	return (new_str);
+}
+
+void		to_lower(char *c)
+{
+	if (*c >= 65 && *c <= 90)
+		*c += 32;
+}

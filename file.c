@@ -12,180 +12,48 @@
 
 #include "rt_v1.h"
 
-uint8_t		set_position(t_master *master, char **split, uint16_t *i)
+int8_t find_scene(char **current, char *needle, t_master *master)
 {
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{") && master->error_flag)
+	if (ft_strstr(*current, needle))
 	{
-		master->scene.cam.position.x = atof(*(split + ++(*i)));
-		master->scene.cam.position.y = atof(*(split + ++(*i)));
-		master->scene.cam.position.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_rotate(t_master *master, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{") && master->error_flag)
-	{
-		master->scene.cam.rotate.x = atof(*(split + ++(*i)));
-		master->scene.cam.rotate.y = atof(*(split + ++(*i)));
-		master->scene.cam.rotate.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_light_color(t_light *light, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		light->color.r = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.g = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.b = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.a = 0;
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_light_position(t_light *light, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		light->position.x = atof(*(split + ++(*i)));
-		light->position.y = atof(*(split + ++(*i)));
-		light->position.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-void		set_camera(t_master *master, char **split, uint16_t *i, int8_t	*flag)
-{
-	if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "position") && master->error_flag)
-	{
-		master->error_flag = set_position(master, split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "rotate") && master->error_flag)
-	{
-		master->error_flag = set_rotate(master, split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}") && master->error_flag)
-		*flag = -1;
-}
-
-t_light		*get_last_light(t_scene *scene)
-{
-	t_light *last;
-
-	last = scene->light;
-	if (last)
-	{
-		while (last->next)
-			last = last->next;
-	}
-	return (last);
-}
-
-void		set_light(t_master *master, char **split, uint16_t *i, int8_t	*flag)
-{
-	if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "position") && master->error_flag)
-	{
-		master->error_flag = set_light_position(get_last_light(&master->scene), split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "color") && master->error_flag)
-	{
-		master->error_flag = set_light_color(get_last_light(&master->scene), split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}") && master->error_flag)
-		*flag = -1;
-}
-
-void	get_light(t_light **head)
-{
-	t_light *back;
-	t_light *light;
-
-	if (!head)
-		return ;
-	if (!(*head))
-	{
-		light = (t_light*)malloc(sizeof(t_light));
-		ft_bzero(light, sizeof(t_light));
-		(*head) = light;
+		*current += ft_strlen(needle);
+		*current = find(*current);
+		if (**current != '{')
+			return (-1);
+		else
+			(*current)++;
+		pars_scene(current, master);
 	}
 	else
-	{
-		back = (*head);
-		while (back->next)
-			back = back->next;
-		back->next = (t_light*)malloc(sizeof(t_light));
-		ft_bzero(back->next, sizeof(t_light));
-	}
-}
-
-void		ft_set_object(t_master *master, char **split, uint16_t *i)
-{
-	static int8_t	flag = -1;
-
-	if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "camera")) || flag == CAM)
-	{
-		if (flag != CAM && (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{")))
-			flag = CAM;
-		else if (flag == CAM)
-			set_camera(master, split, i, &flag);
-	}
-	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "light")) || flag == LIGHT)
-	{
-		if (flag != LIGHT && (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{")))
-		{
-			flag = LIGHT;
-			get_light(&master->scene.light);
-		}
-		else if (flag == LIGHT)
-			set_light(master, split, i, &flag);
-	}
-//	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "plane")) || flag == PLANE)
-//	{
-//		flag = PLANE;
-////		set_plane();
-//	}
-//	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "sphere")) || flag == SPHERE)
-//	{
-//		flag = SPHERE;
-////		set_sphere();
-//	}
-//	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "cylinder")) || flag == CYLINDER)
-//	{
-//		flag = CYLINDER;
-////		set_cylinder;
-//	}
-//	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "cone")) || flag == CONE)
-//	{
-//		flag = CONE;
-////		set_cone();
-//	}
-	else if (flag == -1)
 		master->error_flag = BROKEN;
+	if (**current == '}' && *(*current + 1) == '\0')
+		return (END);
+	return (-1);
 }
 
 int8_t		ft_read_file(t_master *master)
 {
-	t_list		*list;
-	char		**split;
-	uint16_t	i;
+	char		*content;
+	char 		*current;
+	int16_t		i;
 
-	list = master->scene.head;
+	i = -1;
+	content = get_list_contenr(master->scene.head);
+//	printf("%s\n", content);
+	current = content;
 
+	i = find_scene(&current, "scene", master);
+//	printf("current = %s\ni = %d\n", current, i);
+//	while (current)
+//	{
+//		current = find(content);
+//
+//	}
+//	current = ft_strstr(content, "scene");
+//	if (!current)
+//		return (BROKEN);
+//	printf("%s\n", current);
+/*
 	while (list && master->error_flag)
 	{
 		split = ft_space_split((char*)list->content);
@@ -193,17 +61,20 @@ int8_t		ft_read_file(t_master *master)
 		while (split[i] && master->error_flag && master->init_flag != END)
 		{
 			printf("\t%s\t\t\t\t%d\n", split[i], i);
-			if (!list->next)
-			{
-				if (!ft_strcmp(*split, "}") && master->error_flag)
-					master->init_flag = END;
-			}
-			if (master->init_flag == START)
-				ft_set_base(master, split[i]);
-			else if (master->init_flag == SCENE)
-				ft_set_scene(master, split, &i);
-			else if (master->init_flag == OBJECT)
-				ft_set_object(master, split, &i);
+
+//			if (!list->next)
+//			{
+//				if (!ft_strcmp(*split, "}") && master->error_flag)
+//					master->init_flag = END;
+//			}
+//			if (master->init_flag == START)
+//				ft_set_base(master, split[i]);
+//			else if (master->init_flag == SCENE)
+//				ft_set_scene(master, split, &i);
+//			else if (master->init_flag == OBJECT)
+//				ft_set_object(master, split, &i);
+//			else if (master->init_flag == SHAPE)
+//				ft_set_shape(master, split, &i);
 			i++;
 		}
 		ft_split_del(split);
@@ -211,13 +82,13 @@ int8_t		ft_read_file(t_master *master)
 	}
 	(master->error_flag == BROKEN) ? printf("BROKEN\n") : printf("WORK\n");
 	return (master->error_flag);
+ */
+
+	free(content);
+	return (WORK);
 }
 
-void		to_lower(char *c)
-{
-	if (*c >= 65 && *c <= 90)
-		*c += 32;
-}
+
 
 t_list		*open_file(const char *file)
 {

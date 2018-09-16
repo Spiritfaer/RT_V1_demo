@@ -2,12 +2,4 @@ scEne	{
 	name	{ some-name-for-scene }
 	window	{ 780 640 }
 	render	{ accelerated }
-
-	object {
-		type { sphere }
-		position { 0.0 0.0 0.0 }
-		rotate { 0.0 0.0 0.0 }
-		scale { 0.0 0.0 0.0 }
-		color { 0xFF00 0xFF00 0xFF00 }
-	}
 }

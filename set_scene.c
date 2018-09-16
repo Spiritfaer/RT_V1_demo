@@ -12,115 +12,96 @@
 
 #include "rt_v1.h"
 
-uint8_t		ft_set_name(t_master *master, char **split, uint16_t *i)
+static void	ft_name(char **current, t_master *master, int16_t *init_flag)
 {
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
+	*current += ft_strlen("name");
+	*current = find(*current);
+	if (**current == '{')
 	{
-		if (*(split + ++(*i)))
-			master->sdl.win_name = ft_strdup(*(split + (*i)));
-		else if (!ft_strcmp(*(split + (*i)), "}"))
+		(*current)++;
+		*current = find(*current);
+		master->sdl.win_name = get_word(*current);
+//		printf("%s\n", master->sdl.win_name);
+		*current += ft_strlen(master->sdl.win_name);
+		*current = find(*current);
+		if (**current == '}')
 		{
-			master->sdl.win_name = ft_strdup("Default name");
-			(*i)++;
-			return (WORK);
-		}
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
-}
-
-uint8_t		ft_set_win(t_master *master, char **split, uint16_t *i)
-{
-	int32_t	tmp;
-
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.screen_width = MIN_SCREEN_WIDTH;
-			master->sdl.screen_height = MIN_SCREEN_HEIGHT;
+			(*current)++;
+			*current = find(*current);
+			*init_flag |= SET_NAME;
 		}
 		else
-		{
-			if (*(split + (*i)))
-			{
-				tmp = (uint16_t)ft_atoi(*(split + (*i)));
-				master->sdl.screen_width = (tmp > 640) ? (uint16_t)ft_atoi(*(split + (*i))) : MIN_SCREEN_WIDTH;
-				(*i)++;
-			}
-			if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
-				master->sdl.screen_height = MIN_SCREEN_HEIGHT;
-			else if (*(split + (*i)))
-			{
-				tmp = (uint16_t) ft_atoi(*(split + (*i)));
-				master->sdl.screen_height = (tmp > 480) ? (uint16_t)ft_atoi(*(split + (*i))) : MIN_SCREEN_WIDTH;
-				(*i)++;
-				if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
-					return (WORK);
-			}
-		}
-	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
-}
-
-
-uint8_t		ft_set_render(t_master *master, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "accelerated"))
-		{
-			master->sdl.render_flag = ACCELERATED;
-			if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-				return (WORK);
-		}
-		else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "software"))
-			master->sdl.render_flag = SOFTWARE;
-		else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.render_flag = SOFTWARE;
-			return (WORK);
-		}
-		else if (*(split + (*i)) && ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.render_flag = SOFTWARE;
 			master->error_flag = BROKEN;
-			return (BROKEN);
-		}
 	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
-}
-
-void 		ft_set_scene(t_master *master, char **split, uint16_t *i)
-{
-	static uint8_t	set[MAXBASE] = {0, 0, 0};
-
-	if (master->error_flag == WORK)
-	{
-		if (!ft_strcmp(*split, "name"))
-			set[NAME] = ft_set_name(master, split, i);
-		else if (!ft_strcmp(*split, "window"))
-			set[WINDOW] = ft_set_win(master, split, i);
-		else if (!ft_strcmp(*split, "render"))
-			set[RENDER] = ft_set_render(master, split, i);
-	}
-	if (ft_check_set_scene(set) == WORK)
-		master->init_flag = OBJECT;
-}
-
-void		ft_set_base(t_master *master, char *split)
-{
-	static int8_t braket = 0;
-	if (!ft_strcmp(split, "scene") && !braket)
-		braket = 1;
-	else if (!ft_strcmp(split, "{") && braket++)
-		master->init_flag = SCENE;
-	else if (master->init_flag == OBJECT && !ft_strcmp(split, "}") && braket == 2)
-		return ;
 	else
+		master->error_flag = BROKEN;
+}
+
+static void ft_window(char **current, t_master *master, int16_t *init_flag)
+{
+	*current += ft_strlen("window");
+	*current = find(*current);
+	if (**current == '{')
+	{
+		(*current)++;
+		*current = find(*current);
+		set_window(current, master);
+//		printf("width = %d\nheight = %d\n", master->scene.cam.window_size.x,
+//				master->scene.cam.window_size.y);
+		if (**current == '}')
+		{
+			*init_flag |= SET_WINDOWS;
+			(*current)++;
+			*current = find(*current);
+		}
+		else
+			master->error_flag = BROKEN;
+	}
+	else
+		master->error_flag = BROKEN;
+}
+
+static void ft_render(char **current, t_master *master, int16_t *init_flag)
+{
+	*current += ft_strlen("render");
+	*current = find(*current);
+	if (**current == '{')
+	{
+		(*current)++;
+		*current = find(*current);
+		master->sdl.render_flag = set_render(current);
+//		printf("%d\n", master->sdl.render_flag);
+		if (**current == '}')
+		{
+			*init_flag |= SET_RENDER;
+			(*current)++;
+			*current = find(*current);
+		}
+		else
+			master->error_flag = BROKEN;
+	}
+	else
+		master->error_flag = BROKEN;
+}
+
+void	pars_scene(char **current, t_master *master)
+{
+	int16_t init_flag = 0;
+	int16_t i = 0;
+	*current = find(*current);
+	while (i < MAXBASE && master->error_flag)
+	{
+		if (!(init_flag & SET_NAME)
+			&& ft_strstr(*current, "name") == *current)
+			ft_name(current, master, &init_flag);
+		else if (!(init_flag & SET_WINDOWS)
+			&& ft_strstr(*current, "window") == *current)
+			ft_window(current, master, &init_flag);
+		else if (!(init_flag & SET_RENDER)
+			&& ft_strstr(*current, "render") == *current)
+			ft_render(current, master, &init_flag);
+		i++;
+	}
+	if (!(init_flag & (SET_NAME | SET_WINDOWS | SET_RENDER)))
 		master->error_flag = BROKEN;
 }

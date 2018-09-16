@@ -24,7 +24,7 @@ enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE, MAXOBJ};
 enum e_base		{NAME, WINDOW, RENDER, MAXBASE};
 enum e_xyz		{X, Y, Z};
 enum e_render	{SOFTWARE, ACCELERATED};
-enum e_pars		{START, SCENE, OBJECT, END};
+enum e_pars		{START, SCENE, OBJECT, SHAPE, END};
 enum e_error	{BROKEN, WORK};
 
 # define MAX_SCREEN_WIDTH 1440
@@ -32,10 +32,15 @@ enum e_error	{BROKEN, WORK};
 # define MAX_SCREEN_HEIGHT 840
 # define MIN_SCREEN_HEIGHT 480
 # define ERROR_FD 1
+
 # define POS 1
 # define ROT 2
 # define COL 4
 # define SCA 8
+
+#define SET_NAME 0x01
+#define SET_WINDOWS 0x02
+#define SET_RENDER 0x04
 
 typedef struct		s_v2i
 {
