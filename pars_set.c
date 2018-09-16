@@ -26,8 +26,8 @@ void	set_window(char **current, t_master *master)
 	height = get_word(*current);
 	*current += ft_strlen(height);
 	*current = find(*current);
-	master->scene.cam.window_size.x = ft_atoi(width);
-	master->scene.cam.window_size.y = ft_atoi(height);
+	master->sdl.screen_size.x = ft_atoi(width);
+	master->sdl.screen_size.y = ft_atoi(height);
 	free(width);
 	free(height);
 }

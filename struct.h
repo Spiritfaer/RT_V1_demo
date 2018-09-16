@@ -22,7 +22,7 @@
 
 enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE, MAXOBJ};
 enum e_base		{NAME, WINDOW, RENDER, MAXBASE};
-enum e_xyz		{X, Y, Z};
+enum e_xyz		{X, Y, Z, VECTOR};
 enum e_render	{SOFTWARE, ACCELERATED};
 enum e_pars		{START, SCENE, OBJECT, SHAPE, END};
 enum e_error	{BROKEN, WORK};
@@ -33,14 +33,16 @@ enum e_error	{BROKEN, WORK};
 # define MIN_SCREEN_HEIGHT 480
 # define ERROR_FD 1
 
-# define POS 1
-# define ROT 2
-# define COL 4
-# define SCA 8
+# define POS 0x01
+# define ROT 0x02
+# define COL 0x04
+# define SCA 0x08
 
 #define SET_NAME 0x01
 #define SET_WINDOWS 0x02
 #define SET_RENDER 0x04
+#define SET_CAMERA 0x08
+#define SET_LIGHT 0x10
 
 typedef struct		s_v2i
 {
@@ -72,8 +74,6 @@ typedef struct		s_cam
 {
 	t_v3d			position;
 	t_v3d			rotate;
-	t_v2i			window_size;
-	int8_t			render_flag;
 }					t_cam;
 
 typedef struct 		s_light
@@ -106,8 +106,7 @@ typedef struct		s_sdl
 	SDL_Renderer	*render;
 	SDL_Event		event;
 	char			*win_name;
-	int32_t			screen_width;
-	int32_t			screen_height;
+	t_v2i			screen_size;
 	uint8_t			render_flag;
 }					t_sdl;
 
@@ -115,7 +114,7 @@ typedef struct		s_master
 {
 	t_sdl			sdl;
 	t_scene			scene;
-	int8_t			init_flag;
+	int16_t			init_flag;
 	uint8_t			error_flag;
 }					t_master;
 

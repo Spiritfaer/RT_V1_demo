@@ -2,4 +2,8 @@ scEne	{
 	name	{ some-name-for-scene }
 	window	{ 780 640 }
 	render	{ accelerated }
+	camera	{
+   		position { 1.1 2.2 3.3 }
+   		rotate { 4.4 5.5 6.6 }
+   	}
 }

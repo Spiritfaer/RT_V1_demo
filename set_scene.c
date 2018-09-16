@@ -12,7 +12,7 @@
 
 #include "rt_v1.h"
 
-static void	ft_name(char **current, t_master *master, int16_t *init_flag)
+static void		ft_name(char **current, t_master *master, int16_t *init_flag)
 {
 	*current += ft_strlen("name");
 	*current = find(*current);
@@ -21,7 +21,6 @@ static void	ft_name(char **current, t_master *master, int16_t *init_flag)
 		(*current)++;
 		*current = find(*current);
 		master->sdl.win_name = get_word(*current);
-//		printf("%s\n", master->sdl.win_name);
 		*current += ft_strlen(master->sdl.win_name);
 		*current = find(*current);
 		if (**current == '}')
@@ -37,7 +36,7 @@ static void	ft_name(char **current, t_master *master, int16_t *init_flag)
 		master->error_flag = BROKEN;
 }
 
-static void ft_window(char **current, t_master *master, int16_t *init_flag)
+static void		ft_window(char **current, t_master *master, int16_t *init_flag)
 {
 	*current += ft_strlen("window");
 	*current = find(*current);
@@ -46,8 +45,6 @@ static void ft_window(char **current, t_master *master, int16_t *init_flag)
 		(*current)++;
 		*current = find(*current);
 		set_window(current, master);
-//		printf("width = %d\nheight = %d\n", master->scene.cam.window_size.x,
-//				master->scene.cam.window_size.y);
 		if (**current == '}')
 		{
 			*init_flag |= SET_WINDOWS;
@@ -61,7 +58,7 @@ static void ft_window(char **current, t_master *master, int16_t *init_flag)
 		master->error_flag = BROKEN;
 }
 
-static void ft_render(char **current, t_master *master, int16_t *init_flag)
+static void		ft_render(char **current, t_master *master, int16_t *init_flag)
 {
 	*current += ft_strlen("render");
 	*current = find(*current);
@@ -70,7 +67,6 @@ static void ft_render(char **current, t_master *master, int16_t *init_flag)
 		(*current)++;
 		*current = find(*current);
 		master->sdl.render_flag = set_render(current);
-//		printf("%d\n", master->sdl.render_flag);
 		if (**current == '}')
 		{
 			*init_flag |= SET_RENDER;
@@ -84,24 +80,45 @@ static void ft_render(char **current, t_master *master, int16_t *init_flag)
 		master->error_flag = BROKEN;
 }
 
-void	pars_scene(char **current, t_master *master)
+static void		pars_scene(char **current, t_master *master)
 {
-	int16_t init_flag = 0;
-	int16_t i = 0;
+	int16_t i;
+
+	master->init_flag = 0;
+	i = 0;
 	*current = find(*current);
 	while (i < MAXBASE && master->error_flag)
 	{
-		if (!(init_flag & SET_NAME)
+		if (!(master->init_flag & SET_NAME)
 			&& ft_strstr(*current, "name") == *current)
-			ft_name(current, master, &init_flag);
-		else if (!(init_flag & SET_WINDOWS)
+			ft_name(current, master, &master->init_flag);
+		else if (!(master->init_flag & SET_WINDOWS)
 			&& ft_strstr(*current, "window") == *current)
-			ft_window(current, master, &init_flag);
-		else if (!(init_flag & SET_RENDER)
+			ft_window(current, master, &master->init_flag);
+		else if (!(master->init_flag & SET_RENDER)
 			&& ft_strstr(*current, "render") == *current)
-			ft_render(current, master, &init_flag);
+			ft_render(current, master, &master->init_flag);
 		i++;
 	}
-	if (!(init_flag & (SET_NAME | SET_WINDOWS | SET_RENDER)))
+	if (!(master->init_flag & (SET_NAME | SET_WINDOWS | SET_RENDER)))
 		master->error_flag = BROKEN;
+}
+
+int8_t			find_scene(char **current, char *needle, t_master *master)
+{
+	if (ft_strstr(*current, needle))
+	{
+		*current += ft_strlen(needle);
+		*current = find(*current);
+		if (**current != '{')
+			return (-1);
+		else
+			(*current)++;
+		pars_scene(current, master);
+	}
+	else
+		master->error_flag = BROKEN;
+	if (!master->error_flag)
+		return (-1);
+	return (WORK);
 }

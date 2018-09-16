@@ -36,6 +36,6 @@ char	*get_list_contenr(t_list *head);
 void	to_lower(char *c);
 uint8_t	set_render(char **current);
 void	set_window(char **current, t_master *master);
-void	pars_scene(char **current, t_master *master);
+int8_t	find_scene(char **current, char *needle, t_master *master);
 
 #endif

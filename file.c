@@ -12,80 +12,133 @@
 
 #include "rt_v1.h"
 
-int8_t find_scene(char **current, char *needle, t_master *master)
+void	ft_set_v3d(char **current, t_v3d *vector)
 {
-	if (ft_strstr(*current, needle))
+	char	*str_vec[VECTOR + 1];
+	int8_t	i;
+
+	i = -1;
+	while (++i < VECTOR)
 	{
-		*current += ft_strlen(needle);
+		str_vec[i] = get_word(*current);
+		*current += ft_strlen(str_vec[i]);
 		*current = find(*current);
-		if (**current != '{')
-			return (-1);
-		else
+	}
+	vector->x = atof(str_vec[X]);
+	vector->y = atof(str_vec[Y]);
+	vector->z = atof(str_vec[Z]);
+	i = -1;
+	while (++i < VECTOR)
+		free(str_vec[i]);
+}
+
+void	ft_set_rotate(char **current, t_master *master)
+{
+	*current += ft_strlen("rotate");
+	*current = find(*current);
+	if (**current == '{')
+	{
+		(*current)++;
+		*current = find(*current);
+		ft_set_v3d(current, &master->scene.cam.rotate);
+		if (**current == '}')
+		{
 			(*current)++;
-		pars_scene(current, master);
+			*current = find(*current);
+		}
+		else
+			master->error_flag = BROKEN;
 	}
 	else
 		master->error_flag = BROKEN;
-	if (**current == '}' && *(*current + 1) == '\0')
-		return (END);
-	return (-1);
+}
+
+void	ft_set_position(char **current, t_master *master)
+{
+	*current += ft_strlen("position");
+	*current = find(*current);
+	if (**current == '{')
+	{
+		(*current)++;
+		*current = find(*current);
+		ft_set_v3d(current, &master->scene.cam.position);
+		if (**current == '}')
+		{
+			(*current)++;
+			*current = find(*current);
+		}
+		else
+			master->error_flag = BROKEN;
+	}
+	else
+		master->error_flag = BROKEN;
+}
+
+void	ft_camera(char **current, t_master *master)
+{
+	int8_t	i;
+	int8_t	init;
+
+	i = 3;
+	init = 0;
+	*current += ft_strlen("camera");
+	*current = find(*current);
+	if (**current == '{')
+	{
+		(*current)++;
+		*current = find(*current);
+		while (i-- && master->error_flag)
+		{
+			if (!(init & POS) && ft_strstr(*current, "position") == *current)
+				ft_set_position(current, master);
+			else if (!(init & ROT) && ft_strstr(*current, "rotate") == *current)
+				ft_set_rotate(current, master);
+			else if (init & (POS | ROT))
+				return ;
+			else
+				master->error_flag = BROKEN;
+		}
+	}
+	else
+		master->error_flag = BROKEN;
+}
+
+int8_t		find_object(char **current, t_master *master)
+{
+	while (master->error_flag == WORK)
+	{
+		if (**current == '}' && *(*current + 1) == '\0')
+			return (WORK);
+		else if (ft_strstr(*current, "object") == *current)
+			printf("00000000\n");
+		else if (ft_strstr(*current, "light") == *current)
+			printf("11111111\n");
+		else if (!(master->init_flag & SET_CAMERA) && ft_strstr(*current, "camera") == *current)
+			ft_camera(current, master);
+	}
+	return (BROKEN);
 }
 
 int8_t		ft_read_file(t_master *master)
 {
 	char		*content;
 	char 		*current;
-	int16_t		i;
 
-	i = -1;
 	content = get_list_contenr(master->scene.head);
 //	printf("%s\n", content);
 	current = content;
-
-	i = find_scene(&current, "scene", master);
-//	printf("current = %s\ni = %d\n", current, i);
-//	while (current)
-//	{
-//		current = find(content);
-//
-//	}
-//	current = ft_strstr(content, "scene");
-//	if (!current)
-//		return (BROKEN);
-//	printf("%s\n", current);
-/*
-	while (list && master->error_flag)
+	if (find_scene(&current, "scene", master) <= 0 ||
+			find_object(&current, master) <= 0)
 	{
-		split = ft_space_split((char*)list->content);
-		i = 0;
-		while (split[i] && master->error_flag && master->init_flag != END)
-		{
-			printf("\t%s\t\t\t\t%d\n", split[i], i);
-
-//			if (!list->next)
-//			{
-//				if (!ft_strcmp(*split, "}") && master->error_flag)
-//					master->init_flag = END;
-//			}
-//			if (master->init_flag == START)
-//				ft_set_base(master, split[i]);
-//			else if (master->init_flag == SCENE)
-//				ft_set_scene(master, split, &i);
-//			else if (master->init_flag == OBJECT)
-//				ft_set_object(master, split, &i);
-//			else if (master->init_flag == SHAPE)
-//				ft_set_shape(master, split, &i);
-			i++;
-		}
-		ft_split_del(split);
-		list = list->next;
+		free(content);
+		return (BROKEN);
 	}
-	(master->error_flag == BROKEN) ? printf("BROKEN\n") : printf("WORK\n");
-	return (master->error_flag);
- */
-
-	free(content);
-	return (WORK);
+	if (*current == '}' && *(current + 1) == '\0')
+	{
+		free(content);
+		return (WORK);
+	}
+	return (BROKEN);
 }
 
 
