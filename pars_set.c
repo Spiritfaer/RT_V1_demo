@@ -58,3 +58,64 @@ int8_t	ft_current_step(char **current, char *str)
 	*current = find(*current);
 	return (1);
 }
+
+void	ft_set_col(char **current, SDL_Color *color)
+{
+	char	*str_col[RGBA + 1];
+	int8_t	i;
+
+	i = -1;
+	while (++i < RGBA)
+	{
+		str_col[i] = get_word(*current);
+		ft_current_step(current, str_col[i]);
+	}
+	color->r = (uint8_t)strtol(str_col[RED], NULL, 16);
+	color->g = (uint8_t)strtol(str_col[GREEN], NULL, 16);
+	color->b = (uint8_t)strtol(str_col[BLUE], NULL, 16);
+	color->a = (uint8_t)strtol(str_col[ALPHA], NULL, 16);
+	i = -1;
+	while (++i < RGBA)
+		free(str_col[i]);
+}
+
+void	*get_last_list(t_light *light, t_object *object)
+{
+	t_light		*ltmp;
+	t_object	*otmp;
+
+	if (!light)
+	{
+		otmp = object;
+		while (otmp->next)
+			otmp = otmp->next;
+		return (otmp);
+	}
+	ltmp = light;
+	while (ltmp->next)
+		ltmp = ltmp->next;
+	return (ltmp);
+}
+
+void	get_light(t_light **head)
+{
+	t_light *back;
+	t_light *light;
+
+	if (!head)
+		return ;
+	if (!(*head))
+	{
+		light = (t_light*)malloc(sizeof(t_light));
+		ft_bzero(light, sizeof(t_light));
+		(*head) = light;
+	}
+	else
+	{
+		back = (*head);
+		while (back->next)
+			back = back->next;
+		back->next = (t_light*)malloc(sizeof(t_light));
+		ft_bzero(back->next, sizeof(t_light));
+	}
+}

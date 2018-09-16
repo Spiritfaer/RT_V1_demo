@@ -13,14 +13,14 @@
   <component name="ChangeListManager">
     <list default="true" id="caf5164e-d022-46f8-b4b1-10a1ed15c1c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/RT_V1_demo" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RT_V1_demo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file.c" beforeDir="false" afterPath="$PROJECT_DIR$/file.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pars_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/pars_set.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rt_v1.h" beforeDir="false" afterPath="$PROJECT_DIR$/rt_v1.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scena_0" beforeDir="false" afterPath="$PROJECT_DIR$/scena_0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/set_scene.c" beforeDir="false" afterPath="$PROJECT_DIR$/set_scene.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_cam.c" beforeDir="false" afterPath="$PROJECT_DIR$/set_cam.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/struct.h" beforeDir="false" afterPath="$PROJECT_DIR$/struct.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -50,24 +50,24 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="1" />
-          <entry key="c" value="12339" />
-          <entry key="h" value="1862" />
-          <entry key="scena_0" value="175" />
+          <entry key="c" value="13651" />
+          <entry key="h" value="1969" />
+          <entry key="scena_0" value="207" />
           <entry key="scena_1" value="94" />
-          <entry key="txt" value="160" />
+          <entry key="txt" value="202" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="96" />
-          <entry key="ObjectiveC" value="14201" />
-          <entry key="PLAIN_TEXT" value="334" />
+          <entry key="ObjectiveC" value="15620" />
+          <entry key="PLAIN_TEXT" value="408" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="1" />
-          <entry key="c" value="31" />
+          <entry key="c" value="39" />
           <entry key="h" value="6" />
           <entry key="scena_0" value="3" />
           <entry key="scena_1" value="3" />
@@ -77,7 +77,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="1" />
-          <entry key="ObjectiveC" value="37" />
+          <entry key="ObjectiveC" value="45" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -88,32 +88,14 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.714703">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.47814208">
+        <splitter split-orientation="horizontal" split-proportion="0.5210136">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/main.c">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="450">
-                      <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/init.c">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="435">
-                      <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/foo.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1284">
-                      <caret line="180" selection-start-line="180" selection-end-line="180" selection-end-column="29" />
+                    <state relative-caret-position="398">
+                      <caret line="154" selection-start-line="154" selection-end-line="154" />
                     </state>
                   </provider>
                 </entry>
@@ -121,47 +103,26 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/set_scene.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="646">
-                      <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+                    <state relative-caret-position="-8">
+                      <caret line="56" selection-start-line="56" selection-end-line="56" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/pars_set.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="330">
-                      <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="30" />
+                    <state relative-caret-position="903">
+                      <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
                     </state>
                   </provider>
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/libft/ft_lstnew.c">
+                <entry file="file://$PROJECT_DIR$/set_cam.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
-                      <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/libft/libft.h">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1260">
-                      <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/deleted_cod.c">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="4080">
-                      <caret line="272" column="1" selection-start-line="272" selection-start-column="1" selection-end-line="272" selection-end-column="1" />
-                      <folding>
-                        <element signature="e#0#18#0" expanded="true" />
-                      </folding>
+                    <state relative-caret-position="405">
+                      <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
                     </state>
                   </provider>
                 </entry>
@@ -170,11 +131,20 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/main.c">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="450">
+                      <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/file.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="201">
-                      <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+                    <state relative-caret-position="586">
+                      <caret line="93" column="28" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="28" />
                     </state>
                   </provider>
                 </entry>
@@ -197,6 +167,18 @@
                   </provider>
                 </entry>
               </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/deleted_cod.c">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="90">
+                      <caret line="215" selection-start-line="215" selection-end-line="236" selection-end-column="1" />
+                      <folding>
+                        <element signature="e#0#18#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
             </leaf>
           </split-second>
         </splitter>
@@ -214,11 +196,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/struct.h">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="327">
-                      <caret line="113" column="1" lean-forward="true" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
+                    <state relative-caret-position="870">
+                      <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
                       <folding>
                         <element signature="e#928#947#0" expanded="true" />
                       </folding>
@@ -226,11 +208,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/rt_v1.h">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="494">
-                      <caret line="41" selection-start-line="41" selection-end-line="41" />
+                    <state relative-caret-position="470">
+                      <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
                     </state>
                   </provider>
                 </entry>
@@ -239,20 +221,20 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/scena_1">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+                    <state relative-caret-position="180">
+                      <caret line="12" selection-start-line="12" selection-end-line="18" selection-end-column="5" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/scena_0">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="90">
-                      <caret line="6" column="14" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="14" />
+                    <state relative-caret-position="180">
+                      <caret line="12" selection-start-line="12" selection-end-line="12" />
                     </state>
                   </provider>
                 </entry>
@@ -283,13 +265,14 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/deleted_cod.c" />
         <option value="$PROJECT_DIR$/foo.c" />
-        <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/rt_v1.h" />
         <option value="$PROJECT_DIR$/set_scene.c" />
-        <option value="$PROJECT_DIR$/pars_set.c" />
-        <option value="$PROJECT_DIR$/scena_0" />
-        <option value="$PROJECT_DIR$/file.c" />
+        <option value="$PROJECT_DIR$/set_cam.c" />
         <option value="$PROJECT_DIR$/struct.h" />
+        <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/pars_set.c" />
+        <option value="$PROJECT_DIR$/rt_v1.h" />
+        <option value="$PROJECT_DIR$/file.c" />
+        <option value="$PROJECT_DIR$/scena_0" />
       </list>
     </option>
   </component>
@@ -394,7 +377,7 @@
       <workItem from="1536999170934" duration="12683000" />
       <workItem from="1537018426277" duration="9585000" />
       <workItem from="1537037883564" duration="349000" />
-      <workItem from="1537081565695" duration="17692000" />
+      <workItem from="1537081565695" duration="24363000" />
     </task>
     <task id="LOCAL-00001" summary="added something">
       <created>1536953461255</created>
@@ -424,11 +407,25 @@
       <option name="project" value="LOCAL" />
       <updated>1537099365204</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="working on logic pars logic V0.3.2">
+      <created>1537109173295</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1537109173295</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some optimization V0.3.4">
+      <created>1537111697727</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537111697727</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62739000" />
+    <option name="totallyTimeSpent" value="69410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -438,8 +435,8 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.329927" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.270073" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.270073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992701" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -467,18 +464,12 @@
     <MESSAGE value="added something V0.1" />
     <MESSAGE value="added something V0.2" />
     <MESSAGE value="changed pars logic V0.3.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed pars logic V0.3.1" />
+    <MESSAGE value="changed pars logic V0.3.2" />
+    <MESSAGE value="working on logic pars logic V0.3.2" />
+    <MESSAGE value="some optimization V0.3.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="some optimization V0.3.4" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/file.c</url>
-          <line>98</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="master-&gt;scene.head" />
@@ -544,20 +535,6 @@
     <entry file="file://$PROJECT_DIR$/libft/get_next_line.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_lstnew.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/libft.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -593,79 +570,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deleted_cod.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="272" column="1" selection-start-line="272" selection-start-column="1" selection-end-line="272" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foo.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1284">
-          <caret line="180" selection-start-line="180" selection-end-line="180" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_strstr.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="59" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rt_v1.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pars_set.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scena_0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scena_1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/set_scene.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/struct.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="113" column="1" lean-forward="true" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
-          <folding>
-            <element signature="e#928#947#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,10 +584,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_lstnew.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/libft.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="923">
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deleted_cod.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="215" selection-start-line="215" selection-end-line="236" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/set_scene.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/set_cam.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/struct.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding>
+            <element signature="e#928#947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rt_v1.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pars_set.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scena_1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scena_0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/file.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        <state relative-caret-position="586">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="28" />
         </state>
       </provider>
     </entry>

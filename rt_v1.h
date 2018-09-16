@@ -40,5 +40,8 @@ int8_t	find_scene(char **current, char *needle, t_master *master);
 void	ft_set_v3d(char **current, t_v3d *vector);
 void	ft_camera(char **current, t_master *master);
 int8_t	ft_current_step(char **current, char *str);
+void	ft_set_col(char **current, SDL_Color *color);
+void	*get_last_list(t_light *light, t_object *object);
+void	get_light(t_light **head);
 
 #endif

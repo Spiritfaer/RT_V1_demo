@@ -50,7 +50,7 @@ static void	ft_set_cam_position(char **current, t_master *master, int16_t *init)
 		master->error_flag = BROKEN;
 }
 
-void	ft_camera(char **current, t_master *master)
+void		ft_camera(char **current, t_master *master)
 {
 	int8_t	i;
 	int16_t	*flag;
@@ -68,7 +68,8 @@ void	ft_camera(char **current, t_master *master)
 			else if (!(*flag & ROT) && ft_strstr(*current, "rotate") == *current)
 				ft_set_cam_rotate(current, master, flag);
 			else if (*flag & (POS | ROT) && **current == '}'
-				&& ft_current_step(current, NULL))
+				&& ft_current_step(current, NULL)
+				&& (master->init_flag |= SET_CAMERA))
 				return ;
 			else
 				master->error_flag = BROKEN;

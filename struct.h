@@ -26,6 +26,7 @@ enum e_xyz		{X, Y, Z, VECTOR};
 enum e_render	{SOFTWARE, ACCELERATED};
 enum e_pars		{START, SCENE, OBJECT, SHAPE, END};
 enum e_error	{BROKEN, WORK};
+enum e_color	{RED, GREEN, BLUE, ALPHA, RGBA};
 
 # define MAX_SCREEN_WIDTH 1440
 # define MIN_SCREEN_WIDTH 640
@@ -38,11 +39,12 @@ enum e_error	{BROKEN, WORK};
 # define COL 0x04
 # define SCA 0x08
 
-#define SET_NAME 0x01
-#define SET_WINDOWS 0x02
-#define SET_RENDER 0x04
-#define SET_CAMERA 0x08
-#define SET_LIGHT 0x10
+#define SET_NAME	0x01
+#define SET_WINDOWS	0x02
+#define SET_RENDER	0x04
+#define SET_CAMERA	0x08
+#define SET_LIGHT	0x10
+#define SET_OBJECTS	0x20
 
 typedef struct		s_v2i
 {
