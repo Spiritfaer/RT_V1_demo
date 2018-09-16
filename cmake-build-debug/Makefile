@@ -285,6 +285,60 @@ set_cam.c.s:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_cam.c.s
 .PHONY : set_cam.c.s
 
+set_light.o: set_light.c.o
+
+.PHONY : set_light.o
+
+# target to build an object file
+set_light.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_light.c.o
+.PHONY : set_light.c.o
+
+set_light.i: set_light.c.i
+
+.PHONY : set_light.i
+
+# target to preprocess a source file
+set_light.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_light.c.i
+.PHONY : set_light.c.i
+
+set_light.s: set_light.c.s
+
+.PHONY : set_light.s
+
+# target to generate assembly for a file
+set_light.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_light.c.s
+.PHONY : set_light.c.s
+
+set_object_var.o: set_object_var.c.o
+
+.PHONY : set_object_var.o
+
+# target to build an object file
+set_object_var.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_object_var.c.o
+.PHONY : set_object_var.c.o
+
+set_object_var.i: set_object_var.c.i
+
+.PHONY : set_object_var.i
+
+# target to preprocess a source file
+set_object_var.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_object_var.c.i
+.PHONY : set_object_var.c.i
+
+set_object_var.s: set_object_var.c.s
+
+.PHONY : set_object_var.s
+
+# target to generate assembly for a file
+set_object_var.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_object_var.c.s
+.PHONY : set_object_var.c.s
+
 set_scene.o: set_scene.c.o
 
 .PHONY : set_scene.o
@@ -339,6 +393,12 @@ help:
 	@echo "... set_cam.o"
 	@echo "... set_cam.i"
 	@echo "... set_cam.s"
+	@echo "... set_light.o"
+	@echo "... set_light.i"
+	@echo "... set_light.s"
+	@echo "... set_object_var.o"
+	@echo "... set_object_var.i"
+	@echo "... set_object_var.s"
 	@echo "... set_scene.o"
 	@echo "... set_scene.i"
 	@echo "... set_scene.s"

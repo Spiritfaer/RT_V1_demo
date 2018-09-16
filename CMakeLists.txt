@@ -16,7 +16,7 @@ link_directories(~/.brew/Cellar/sdl2_image/2.0.3/lib/)
 link_directories(~/.brew/Cellar/sdl2_mixer/2.0.2_3/lib/)
 link_directories(~/.brew/Cellar/sdl2_ttf/2.0.14/lib/)
 
-set(SOURCE_FILE main.c file.c foo.c init.c rt_v1.h set_scene.c pars_set.c set_cam.c)
+set(SOURCE_FILE main.c file.c foo.c init.c rt_v1.h set_scene.c pars_set.c set_cam.c set_light.c set_object_var.c)
 
 add_executable(RT_V1_demo ${SOURCE_FILE})
 target_link_libraries(RT_V1_demo -lft

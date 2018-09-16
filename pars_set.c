@@ -4,15 +4,19 @@
 
 #include "rt_v1.h"
 
-uint8_t		set_render(char **current)
+int8_t set_render(char **current)
 {
 	if (ft_strstr(*current, "accelerated") == *current)
 	{
-		*current += ft_strlen("accelerated");
-		*current = find(*current);
+		ft_current_step(current, "accelerated");
 		return (ACCELERATED);
 	}
-	return (SOFTWARE);
+	else if (ft_strstr(*current, "software") == *current)
+	{
+		ft_current_step(current, "software");
+		return (SOFTWARE);
+	}
+	return (-1);
 }
 
 void	set_window(char **current, t_master *master)
@@ -118,4 +122,41 @@ void	get_light(t_light **head)
 		back->next = (t_light*)malloc(sizeof(t_light));
 		ft_bzero(back->next, sizeof(t_light));
 	}
+}
+
+void	get_object(t_object **head)
+{
+	t_object *back;
+	t_object *object;
+
+	if (!head)
+		return ;
+	if (!(*head))
+	{
+		object = (t_object*)malloc(sizeof(t_object));
+		ft_bzero(object, sizeof(t_object));
+		(*head) = object;
+	}
+	else
+	{
+		back = (*head);
+		while (back->next)
+			back = back->next;
+		back->next = (t_object*)malloc(sizeof(t_object));
+		ft_bzero(back->next, sizeof(t_object));
+	}
+}
+
+void	ft_set_typ(char **current, t_object	*object)
+{
+	if (ft_strstr(*current, "sphere") == *current && (object->type = SPHERE))
+		ft_current_step(current, "sphere");
+	else if (ft_strstr(*current, "cylinder") == *current && (object->type = CYLINDER))
+		ft_current_step(current, "cylinder");
+	else if (ft_strstr(*current, "cone") == *current && (object->type = CONE))
+		ft_current_step(current, "cone");
+	else if (ft_strstr(*current, "plane") == *current && (object->type = PLANE))
+		ft_current_step(current, "plane");
+	else
+		object->type = -1;
 }

@@ -111,6 +111,12 @@
 		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_cam.c">
 			<Option target="RT_V1_demo"/>
 		</Unit>
+		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_light.c">
+			<Option target="RT_V1_demo"/>
+		</Unit>
+		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_object_var.c">
+			<Option target="RT_V1_demo"/>
+		</Unit>
 		<Unit filename="/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c">
 			<Option target="RT_V1_demo"/>
 		</Unit>

@@ -8,13 +8,13 @@ scEne	{
 	}
 	light {
 		position { 0.0 0.0 0.0 }
-		color { 0xFF00 0xFF00 0xFF00 }
+		color { 0xFF 0xFF 0xFF 0x00 }
 	}
 	object {
 		type { sphere }
 		position { 0.0 0.0 0.0 }
 		rotate { 0.0 0.0 0.0 }
 		scale { 0.0 0.0 0.0 }
-		color { 0xFF00 0xFF00 0xFF00 }
+		color { 0xFF 0xFF 0xFF 0x00 }
 	}
 }

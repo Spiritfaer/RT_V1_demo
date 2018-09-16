@@ -30,6 +30,10 @@ void	print_test(t_master *master)
 		printf("light was set\n");
 	else
 		printf("light wasn't set\n");
+	if (master->init_flag & SET_OBJECTS)
+		printf("objects was set\n");
+	else
+		printf("objects wasn't set\n");
 }
 
 int		main(int argc, char **argv)

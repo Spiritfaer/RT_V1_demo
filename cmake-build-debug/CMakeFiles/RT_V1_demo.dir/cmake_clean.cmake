@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RT_V1_demo.dir/set_scene.c.o"
   "CMakeFiles/RT_V1_demo.dir/pars_set.c.o"
   "CMakeFiles/RT_V1_demo.dir/set_cam.c.o"
+  "CMakeFiles/RT_V1_demo.dir/set_light.c.o"
+  "CMakeFiles/RT_V1_demo.dir/set_object_var.c.o"
   "RT_V1_demo.pdb"
   "RT_V1_demo"
 )

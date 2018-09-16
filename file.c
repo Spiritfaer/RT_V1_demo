@@ -12,69 +12,34 @@
 
 #include "rt_v1.h"
 
-static void	ft_set_obj_position(char **current, t_master *master, int16_t *init)
-{
-	t_light	*light;
-	ft_current_step(current, "position");
-	if (**current == '{')
-	{
-		ft_current_step(current, NULL);
-		light = get_last_list(master->scene.light, NULL);
-		ft_set_v3d(current, &light->position);
-		if (**current == '}')
-		{
-			*init |= POS;
-			ft_current_step(current, NULL);
-		}
-		else
-			master->error_flag = BROKEN;
-	}
-	else
-		master->error_flag = BROKEN;
-}
-
-static void	ft_set_obj_color(char **current, t_master *master, int16_t *init)
-{
-	t_light	*light;
-	ft_current_step(current, "color");
-	if (**current == '{')
-	{
-		ft_current_step(current, NULL);
-		light = get_last_list(master->scene.light, NULL);
-		ft_set_col(current, &light->color);
-		if (**current == '}')
-		{
-			*init |= COL;
-			ft_current_step(current, NULL);
-		}
-		else
-			master->error_flag = BROKEN;
-	}
-	else
-		master->error_flag = BROKEN;
-}
-
-void		ft_light(char **current, t_master *master)
+void		ft_object(char **current, t_master *master)
 {
 	int8_t	i;
 	int16_t	flag;
 
-	i = 3;
+	i = 6;
 	flag = 0;
-	ft_current_step(current, "light");
-	get_light(&master->scene.light);
+	ft_current_step(current, "object");
+	get_object(&master->scene.object);
 	if (**current == '{')
 	{
 		ft_current_step(current, NULL);
 		while (i-- && master->error_flag)
 		{
+
 			if (!(flag & POS) && ft_strstr(*current, "position") == *current)
 				ft_set_obj_position(current, master, &flag);
 			else if (!(flag & COL) && ft_strstr(*current, "color") == *current)
 				ft_set_obj_color(current, master, &flag);
-			else if (flag & (POS | COL) && **current == '}'
-					 && ft_current_step(current, NULL)
-					 && (master->init_flag |= SET_LIGHT))
+			else if (!(flag & ROT) && ft_strstr(*current, "rotate") == *current)
+				ft_set_obj_rotate(current, master, &flag);
+			else if (!(flag & SCA) && ft_strstr(*current, "scale") == *current)
+				ft_set_obj_scale(current, master, &flag);
+			else if (!(flag & TYP) && ft_strstr(*current, "type") == *current)
+				ft_set_obj_type(current, master, &flag);
+			else if ((flag & ALL) ==  ALL && **current == '}'
+				&& ft_current_step(current, NULL)
+				&& (master->init_flag |= SET_OBJECTS))
 				return ;
 			else
 				master->error_flag = BROKEN;
@@ -91,7 +56,7 @@ int8_t		find_object(char **current, t_master *master)
 		if (**current == '}' && *(*current + 1) == '\0')
 			return (WORK);
 		else if (ft_strstr(*current, "object") == *current)
-			printf("00000000\n");
+			ft_object(current, master);
 		else if (ft_strstr(*current, "light") == *current)
 			ft_light(current, master);
 		else if (!(master->init_flag & SET_CAMERA) && ft_strstr(*current, "camera") == *current)

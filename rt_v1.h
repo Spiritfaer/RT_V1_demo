@@ -34,7 +34,7 @@ char	*get_word(char *end);
 char	*find(const char *str);
 char	*get_list_contenr(t_list *head);
 void	to_lower(char *c);
-uint8_t	set_render(char **current);
+int8_t set_render(char **current);
 void	set_window(char **current, t_master *master);
 int8_t	find_scene(char **current, char *needle, t_master *master);
 void	ft_set_v3d(char **current, t_v3d *vector);
@@ -43,5 +43,13 @@ int8_t	ft_current_step(char **current, char *str);
 void	ft_set_col(char **current, SDL_Color *color);
 void	*get_last_list(t_light *light, t_object *object);
 void	get_light(t_light **head);
+void	get_object(t_object **head);
+void	ft_light(char **current, t_master *master);
+void	ft_set_typ(char **current, t_object	*object);
+void	ft_set_obj_position(char **current, t_master *master, int16_t *init);
+void	ft_set_obj_color(char **current, t_master *master, int16_t *init);
+void	ft_set_obj_rotate(char **current, t_master *master, int16_t *init);
+void	ft_set_obj_scale(char **current, t_master *master, int16_t *init);
+void	ft_set_obj_type(char **current, t_master *master, int16_t *init);
 
 #endif

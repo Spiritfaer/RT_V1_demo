@@ -58,7 +58,7 @@ static void		ft_render(char **current, t_master *master, int16_t *init_flag)
 	{
 		ft_current_step(current, NULL);
 		master->sdl.render_flag = set_render(current);
-		if (**current == '}')
+		if (**current == '}' && master->sdl.render_flag >= 0)
 		{
 			*init_flag |= SET_RENDER;
 			ft_current_step(current, NULL);

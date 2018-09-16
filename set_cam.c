@@ -67,7 +67,7 @@ void		ft_camera(char **current, t_master *master)
 				ft_set_cam_position(current, master, flag);
 			else if (!(*flag & ROT) && ft_strstr(*current, "rotate") == *current)
 				ft_set_cam_rotate(current, master, flag);
-			else if (*flag & (POS | ROT) && **current == '}'
+			else if ((*flag & (POS | ROT)) == (POS | ROT) && **current == '}'
 				&& ft_current_step(current, NULL)
 				&& (master->init_flag |= SET_CAMERA))
 				return ;
