@@ -108,3 +108,24 @@ void	ft_set_obj_type(char **current, t_master *master, int16_t *init)
 	else
 		master->error_flag = BROKEN;
 }
+
+void	ft_set_obj_size(char **current, t_master *master, int16_t *init)
+{
+	t_object	*object;
+	ft_current_step(current, "size");
+	if (**current == '{')
+	{
+		ft_current_step(current, NULL);
+		object = get_last_list(NULL, master->scene.object);
+		ft_set_size(current, object);
+		if (object->type > 0 && **current == '}')
+		{
+			*init |= SIZ;
+			ft_current_step(current, NULL);
+		}
+		else
+			master->error_flag = BROKEN;
+	}
+	else
+		master->error_flag = BROKEN;
+}

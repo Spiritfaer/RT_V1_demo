@@ -160,3 +160,13 @@ void	ft_set_typ(char **current, t_object	*object)
 	else
 		object->type = -1;
 }
+
+void	ft_set_size(char **current, t_object *object)
+{
+	char	*str;
+
+	str = get_word(*current);
+	ft_current_step(current, str);
+	object->size = atof(str);
+	free(str);
+}

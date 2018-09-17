@@ -1,7 +1,3 @@
-//
-// Created by Igor STALEVSKIY on 9/16/18.
-//
-
 #include "rt_v1.h"
 
 static void	ft_set_light_position(char **current, t_master *master, int16_t *init)

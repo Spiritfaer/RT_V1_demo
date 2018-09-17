@@ -123,6 +123,33 @@ RT_V1_demo/fast:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/build
 .PHONY : RT_V1_demo/fast
 
+defolt_setting.o: defolt_setting.c.o
+
+.PHONY : defolt_setting.o
+
+# target to build an object file
+defolt_setting.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o
+.PHONY : defolt_setting.c.o
+
+defolt_setting.i: defolt_setting.c.i
+
+.PHONY : defolt_setting.i
+
+# target to preprocess a source file
+defolt_setting.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/defolt_setting.c.i
+.PHONY : defolt_setting.c.i
+
+defolt_setting.s: defolt_setting.c.s
+
+.PHONY : defolt_setting.s
+
+# target to generate assembly for a file
+defolt_setting.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/defolt_setting.c.s
+.PHONY : defolt_setting.c.s
+
 file.o: file.c.o
 
 .PHONY : file.o
@@ -258,6 +285,33 @@ pars_set.c.s:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/pars_set.c.s
 .PHONY : pars_set.c.s
 
+render.o: render.c.o
+
+.PHONY : render.o
+
+# target to build an object file
+render.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/render.c.o
+.PHONY : render.c.o
+
+render.i: render.c.i
+
+.PHONY : render.i
+
+# target to preprocess a source file
+render.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/render.c.i
+.PHONY : render.c.i
+
+render.s: render.c.s
+
+.PHONY : render.s
+
+# target to generate assembly for a file
+render.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/render.c.s
+.PHONY : render.c.s
+
 set_cam.o: set_cam.c.o
 
 .PHONY : set_cam.o
@@ -375,6 +429,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RT_V1_demo"
+	@echo "... defolt_setting.o"
+	@echo "... defolt_setting.i"
+	@echo "... defolt_setting.s"
 	@echo "... file.o"
 	@echo "... file.i"
 	@echo "... file.s"
@@ -390,6 +447,9 @@ help:
 	@echo "... pars_set.o"
 	@echo "... pars_set.i"
 	@echo "... pars_set.s"
+	@echo "... render.o"
+	@echo "... render.i"
+	@echo "... render.s"
 	@echo "... set_cam.o"
 	@echo "... set_cam.i"
 	@echo "... set_cam.s"

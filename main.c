@@ -39,10 +39,7 @@ void	print_test(t_master *master)
 int		main(int argc, char **argv)
 {
 	t_master	master;
-	master.init_flag = START;
-	master.error_flag = WORK;
-	master.sdl.render = NULL;
-	master.sdl.winndow = NULL;
+	defolt_master(&master);
 	if (argc != 2)
 		return (0);
 	if (ft_parser(argv[1], &master) == BROKEN)
@@ -50,6 +47,7 @@ int		main(int argc, char **argv)
 	else
 	{
 		print_test(&master);
+		render(&master);
 		printf("\nWORK BITCH\n\n");
 	}
 	ft_end(&master.sdl);

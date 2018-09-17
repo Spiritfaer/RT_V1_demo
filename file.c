@@ -17,7 +17,7 @@ void		ft_object(char **current, t_master *master)
 	int8_t	i;
 	int16_t	flag;
 
-	i = 6;
+	i = 7;
 	flag = 0;
 	ft_current_step(current, "object");
 	get_object(&master->scene.object);
@@ -26,7 +26,6 @@ void		ft_object(char **current, t_master *master)
 		ft_current_step(current, NULL);
 		while (i-- && master->error_flag)
 		{
-
 			if (!(flag & POS) && ft_strstr(*current, "position") == *current)
 				ft_set_obj_position(current, master, &flag);
 			else if (!(flag & COL) && ft_strstr(*current, "color") == *current)
@@ -37,6 +36,8 @@ void		ft_object(char **current, t_master *master)
 				ft_set_obj_scale(current, master, &flag);
 			else if (!(flag & TYP) && ft_strstr(*current, "type") == *current)
 				ft_set_obj_type(current, master, &flag);
+			else if (!(flag & SIZ) && ft_strstr(*current, "size") == *current)
+				ft_set_obj_size(current, master, &flag);
 			else if ((flag & ALL) ==  ALL && **current == '}'
 				&& ft_current_step(current, NULL)
 				&& (master->init_flag |= SET_OBJECTS))

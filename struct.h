@@ -39,7 +39,8 @@ enum e_color	{RED, GREEN, BLUE, ALPHA, RGBA};
 # define COL 0x04
 # define SCA 0x08
 # define TYP 0x10
-# define ALL 0x1F
+# define SIZ 0x20
+# define ALL 0x3F
 
 #define SET_NAME	0x01
 #define SET_WINDOWS	0x02
@@ -95,6 +96,7 @@ typedef struct		s_object
 	t_v3d			rotate;
 	t_v3d			scale;
 	SDL_Color		color;
+	double			size;
 	struct s_object	*next;
 }					t_object;
 
@@ -114,6 +116,7 @@ typedef struct		s_sdl
 	char			*win_name;
 	t_v2i			screen_size;
 	int8_t			render_flag;
+	int8_t			loop;
 }					t_sdl;
 
 typedef struct		s_master
