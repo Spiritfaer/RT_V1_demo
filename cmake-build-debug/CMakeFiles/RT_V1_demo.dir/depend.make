@@ -3,6 +3,8 @@
 
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -49,10 +51,11 @@ CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: /Users/istalevs/.brew/Cellar/sdl2/
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../defolt_setting.c
 CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/file.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/file.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/file.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/file.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/file.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/file.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/file.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -99,10 +102,11 @@ CMakeFiles/RT_V1_demo.dir/file.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/incl
 CMakeFiles/RT_V1_demo.dir/file.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/file.c.o: ../file.c
 CMakeFiles/RT_V1_demo.dir/file.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/file.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/foo.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/foo.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/foo.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/foo.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/foo.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/foo.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/foo.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -149,10 +153,11 @@ CMakeFiles/RT_V1_demo.dir/foo.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/inclu
 CMakeFiles/RT_V1_demo.dir/foo.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/foo.c.o: ../foo.c
 CMakeFiles/RT_V1_demo.dir/foo.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/foo.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/init.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/init.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/init.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -198,10 +203,11 @@ CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/incl
 CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/begin_code.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/init.c.o: ../init.c
-CMakeFiles/RT_V1_demo.dir/init.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/main.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/main.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/main.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/main.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/main.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/main.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/main.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -248,10 +254,11 @@ CMakeFiles/RT_V1_demo.dir/main.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/incl
 CMakeFiles/RT_V1_demo.dir/main.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/main.c.o: ../main.c
 CMakeFiles/RT_V1_demo.dir/main.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/main.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -298,10 +305,11 @@ CMakeFiles/RT_V1_demo.dir/pars_set.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../pars_set.c
 CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/pars_set.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/render.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/render.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/render.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/render.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/render.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/render.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/render.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -348,10 +356,11 @@ CMakeFiles/RT_V1_demo.dir/render.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/in
 CMakeFiles/RT_V1_demo.dir/render.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/render.c.o: ../render.c
 CMakeFiles/RT_V1_demo.dir/render.c.o: ../rt_v1.h
-CMakeFiles/RT_V1_demo.dir/render.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -398,10 +407,11 @@ CMakeFiles/RT_V1_demo.dir/set_cam.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/i
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../rt_v1.h
 CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../set_cam.c
-CMakeFiles/RT_V1_demo.dir/set_cam.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -448,10 +458,11 @@ CMakeFiles/RT_V1_demo.dir/set_light.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../rt_v1.h
 CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../set_light.c
-CMakeFiles/RT_V1_demo.dir/set_light.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -498,10 +509,11 @@ CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: /Users/istalevs/.brew/Cellar/sdl2/
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../rt_v1.h
 CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../set_object_var.c
-CMakeFiles/RT_V1_demo.dir/set_object_var.c.o: ../struct.h
 
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../libft/get_next_line.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../libft/libft.h
+CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../vmthlib/include/struct.h
+CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../vmthlib/include/vmth.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_assert.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_atomic.h
@@ -548,5 +560,4 @@ CMakeFiles/RT_V1_demo.dir/set_scene.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/close_code.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../rt_v1.h
 CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../set_scene.c
-CMakeFiles/RT_V1_demo.dir/set_scene.c.o: ../struct.h
 

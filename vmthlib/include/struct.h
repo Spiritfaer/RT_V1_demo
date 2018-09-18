@@ -16,13 +16,13 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <get_next_line.h>
+# include "vmth.h"
 
 # include "SDL.h"
 # include "libft.h"
 
 enum e_object	{CAM, LIGHT, PLANE, SPHERE, CYLINDER, CONE, MAXOBJ};
 enum e_base		{NAME, WINDOW, RENDER, MAXBASE};
-enum e_xyz		{X, Y, Z, VECTOR};
 enum e_render	{SOFTWARE, ACCELERATED};
 enum e_pars		{START, SCENE, OBJECT, SHAPE, END};
 enum e_error	{BROKEN, WORK};
@@ -49,6 +49,8 @@ enum e_color	{RED, GREEN, BLUE, ALPHA, RGBA};
 #define SET_LIGHT	0x10
 #define SET_OBJECTS	0x20
 
+#ifndef VMTH_H
+enum e_xyz		{X, Y, Z, VECTOR};
 typedef struct		s_v2i
 {
 	int32_t			x;
@@ -74,6 +76,7 @@ typedef struct		s_v3d
 	double			y;
 	double			z;
 }					t_v3d;
+#endif
 
 typedef struct		s_cam
 {

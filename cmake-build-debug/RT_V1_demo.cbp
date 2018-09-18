@@ -46,6 +46,8 @@
 				<Compiler>
 					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/libft"/>
 					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/src"/>
+					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/vmthlib/include"/>
+					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/vmthlib/src"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2_image/2.0.3/include/SDL2"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2_mixer/2.0.2_3/include/SDL2"/>
@@ -72,6 +74,8 @@
 				<Compiler>
 					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/libft"/>
 					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/src"/>
+					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/vmthlib/include"/>
+					<Add directory="/Users/istalevs/CLionProjects/RT_V1_demo/vmthlib/src"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2_image/2.0.3/include/SDL2"/>
 					<Add directory="/Users/istalevs/.brew/Cellar/sdl2_mixer/2.0.2_3/include/SDL2"/>

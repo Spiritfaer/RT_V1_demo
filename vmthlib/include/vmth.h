@@ -19,7 +19,7 @@
 # define DEG_TO_RAD PI / 180
 # define RAD_TO_DEG 180 / PI
 
-enum {X, Y, Z};
+enum e_xyz		{X, Y, Z, VECTOR};
 
 typedef struct	s_v3d
 {

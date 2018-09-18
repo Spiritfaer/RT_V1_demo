@@ -18,6 +18,24 @@ string.h
 unistd.h
 -
 
+../vmthlib/include/struct.h
+stdio.h
+-
+fcntl.h
+-
+get_next_line.h
+-
+vmth.h
+../vmthlib/include/vmth.h
+SDL.h
+../vmthlib/include/SDL.h
+libft.h
+../vmthlib/include/libft.h
+
+../vmthlib/include/vmth.h
+math.h
+-
+
 /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL.h
 SDL_main.h
 /Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2/SDL_main.h
@@ -605,16 +623,4 @@ rt_v1.h
 /Users/istalevs/CLionProjects/RT_V1_demo/rt_v1.h
 struct.h
 /Users/istalevs/CLionProjects/RT_V1_demo/struct.h
-
-/Users/istalevs/CLionProjects/RT_V1_demo/struct.h
-stdio.h
--
-fcntl.h
--
-get_next_line.h
--
-SDL.h
-/Users/istalevs/CLionProjects/RT_V1_demo/SDL.h
-libft.h
-/Users/istalevs/CLionProjects/RT_V1_demo/libft.h
 

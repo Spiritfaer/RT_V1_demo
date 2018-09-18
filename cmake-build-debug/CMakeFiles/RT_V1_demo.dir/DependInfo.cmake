@@ -22,6 +22,8 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libft"
   "../src"
+  "../vmthlib/include"
+  "../vmthlib/src"
   "/Users/istalevs/.brew/Cellar/sdl2/2.0.8/include/SDL2"
   "/Users/istalevs/.brew/Cellar/sdl2_image/2.0.3/include/SDL2"
   "/Users/istalevs/.brew/Cellar/sdl2_mixer/2.0.2_3/include/SDL2"

@@ -17,9 +17,13 @@ int8_t	render(t_master *master)
 {
 	if (ft_init(&master->sdl) < 1)
 		return (BROKEN);
+	int16_t iq = 1;
 	while (master->sdl.loop)
 	{
 		events(&master->sdl);
+		if (master->sdl.loop && SDL_WaitEvent(&master->sdl.event))
+			printf("%d\n",iq--);
+
 	}
 	return (WORK);
 }

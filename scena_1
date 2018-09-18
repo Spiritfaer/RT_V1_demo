@@ -1,6 +1,6 @@
 scEne	{
 	name	{ some-name-for-scene }
-	window	{ 1440 840 }
+	window	{ 640 480 }
 	render	{ software }
 	camera	{
 		position { 0.0 0.0 0.0 }
