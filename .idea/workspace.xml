@@ -12,10 +12,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf5164e-d022-46f8-b4b1-10a1ed15c1c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/include/vmth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/libvmth.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_1back.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_1right.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_1up.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_1zero.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2add.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2d.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2dot.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2drot.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2dscale.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2fmul.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2i.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2magnitude.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2mul.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2norm.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2normalize.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_2sub.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3add.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3d.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3dot.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3dreflect.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3drot.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3drotate.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3dscale.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3fmul.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3i.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3magnitude.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3mul.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3norm.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3normalize.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_3sub.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_inters.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmthlib/src/vec_reflect.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RT_V1_demo" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RT_V1_demo" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +61,8 @@
     <session id="1408064292">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.19" value="1" />
@@ -39,7 +72,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.35" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -49,14 +82,14 @@
           <entry key="h" value="2084" />
           <entry key="scena_0" value="242" />
           <entry key="scena_1" value="160" />
-          <entry key="txt" value="258" />
+          <entry key="txt" value="280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="96" />
           <entry key="ObjectiveC" value="17222" />
-          <entry key="PLAIN_TEXT" value="565" />
+          <entry key="PLAIN_TEXT" value="587" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -90,7 +123,7 @@
                 <entry file="file://$PROJECT_DIR$/main.c">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="525">
-                      <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+                      <caret line="56" selection-start-line="56" selection-end-line="56" />
                       <folding>
                         <element signature="e#912#1624#0" />
                       </folding>
@@ -238,7 +271,7 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="183" />
+    <option name="x" value="397" />
     <option name="y" value="23" />
     <option name="width" value="2161" />
     <option name="height" value="1336" />
@@ -249,6 +282,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,11 +290,15 @@
               <item name="RT_V1_demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="RT_V1_demo" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RT_V1_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RT_V1_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="vmthlib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +366,8 @@
       <workItem from="1537037883564" duration="349000" />
       <workItem from="1537081565695" duration="29326000" />
       <workItem from="1537170297572" duration="3408000" />
-      <workItem from="1537205849868" duration="237000" />
+      <workItem from="1537205849868" duration="539000" />
+      <workItem from="1537256762510" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="added something">
       <created>1536953461255</created>
@@ -393,31 +432,37 @@
       <option name="project" value="LOCAL" />
       <updated>1537173252899</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="save progress V0.4.1">
+      <created>1537207432008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1537207432008</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78018000" />
+    <option name="totallyTimeSpent" value="78542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="183" y="23" width="2161" height="1336" extended-state="0" />
-    <editor active="true" />
+    <frame x="397" y="23" width="2161" height="1336" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1208117" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12175555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2692926" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992921" visible="true" weight="0.2692926" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43167204" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3279743" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.29927006" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49976403" weight="0.3279743" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49976403" weight="0.29903537" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50070786" side_tool="true" visible="true" weight="0.2692926" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4988202" weight="0.329582" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.30144694" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -427,6 +472,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -442,7 +497,8 @@
     <MESSAGE value="some optimization V0.3.5" />
     <MESSAGE value="base parser was done V0.3.99" />
     <MESSAGE value="open init win V0.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="open init win V0.4" />
+    <MESSAGE value="save progress V0.4.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="save progress V0.4.1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -625,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/render.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -670,10 +719,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/render.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#912#1624#0" />
           </folding>
