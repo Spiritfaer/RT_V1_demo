@@ -78,6 +78,25 @@ typedef struct		s_v3d
 }					t_v3d;
 #endif
 
+typedef struct		s_ray
+{
+	t_v3d			origin;
+	t_v3d			direction;
+}					t_ray;
+
+typedef struct		s_hitable_list
+{
+	struct s_hitable_list 	**list;
+	int 					list_size;
+}					t_hitable_list;
+
+typedef struct		s_hit_record
+{
+	double 			t;
+	t_v3d			p;
+	t_v3d			normal;
+}					t_hit_record;
+
 typedef struct		s_cam
 {
 	t_v3d			position;

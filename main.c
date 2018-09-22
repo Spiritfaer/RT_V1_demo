@@ -47,7 +47,7 @@ int		main(int argc, char **argv)
 	else
 	{
 		print_test(&master);
-		render(&master);
+		process(&master);
 		printf("\nWORK BITCH\n\n");
 	}
 	ft_end(&master.sdl);

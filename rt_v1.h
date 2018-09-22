@@ -54,6 +54,6 @@ void	ft_set_obj_type(char **current, t_master *master, int16_t *init);
 void	ft_set_obj_size(char **current, t_master *master, int16_t *init);
 void	ft_set_size(char **current, t_object *object);
 void	defolt_master (t_master *master);
-int8_t	render(t_master *master);
+int8_t	process(t_master *master);
 
 #endif

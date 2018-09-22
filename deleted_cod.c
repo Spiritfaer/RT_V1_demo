@@ -1,273 +1,99 @@
-#include "rt_v1.h"
-
-#include "rt_v1.h"
-
-uint8_t		ft_set_name(t_master *master, char **split, uint16_t *i)
+t_ray	set_ray(t_v3d A, t_v3d B)
 {
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		if (*(split + ++(*i)))
-			master->sdl.win_name = ft_strdup(*(split + (*i)));
-		else if (!ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.win_name = ft_strdup("Default name");
-			(*i)++;
-			return (WORK);
-		}
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
+	t_ray ray = {A, B};
+	return (ray);
 }
 
-uint8_t		ft_set_win(t_master *master, char **split, uint16_t *i)
+double	ft_hit_sphere_one(t_v3d *center, double radius, t_ray *ray)
 {
-	int32_t	tmp;
-
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.screen_width = MIN_SCREEN_WIDTH;
-			master->sdl.screen_height = MIN_SCREEN_HEIGHT;
-		}
-		else
-		{
-			if (*(split + (*i)))
-			{
-				tmp = (uint16_t)ft_atoi(*(split + (*i)));
-				master->sdl.screen_width = (tmp > 640) ? (uint16_t)ft_atoi(*(split + (*i))) : MIN_SCREEN_WIDTH;
-				(*i)++;
-			}
-			if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
-				master->sdl.screen_height = MIN_SCREEN_HEIGHT;
-			else if (*(split + (*i)))
-			{
-				tmp = (uint16_t) ft_atoi(*(split + (*i)));
-				master->sdl.screen_height = (tmp > 480) ? (uint16_t)ft_atoi(*(split + (*i))) : MIN_SCREEN_WIDTH;
-				(*i)++;
-				if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
-					return (WORK);
-			}
-		}
-	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
+	t_v3d oc = vec_3sub(ray->origin, *center);
+	double a = vec_3dot(ray->direction, ray->direction);
+	double b = 2.0 * vec_3dot(oc, ray->direction);
+	double c = vec_3dot(oc, oc) - radius * radius;
+	double discriminant = b * b - 4 * a * c;
+	if (discriminant < 0)
+		return (-1.0);
+	return ((-b - sqrt(discriminant)) / (2.0 * a)); //что за формула?
 }
 
-
-uint8_t		ft_set_render(t_master *master, char **split, uint16_t *i)
+t_v3d	point_at_parametr(double t, t_ray *ray)
 {
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
+	t_v3d result;
+
+	result = vec_3fmul(ray->direction, t);
+	result = vec_3add(ray->origin, result);
+	return (result);
+}
+
+t_v3d	vec_3fdiv(t_v3d vec, double f)
+{
+	return ((t_v3d){vec.x / f, vec.y / f, vec.z / f});
+}
+
+int8_t	ft_hit_sphere(t_ray *ray, double t_min, double t_max, t_hit_record *rec, t_object *sphere)
+{
+	t_v3d oc = vec_3sub(ray->origin, sphere->position);
+	double a = vec_3dot(ray->direction, ray->direction);
+	double b = vec_3dot(oc, ray->direction);
+	double c = vec_3dot(oc, oc) - sphere->size * sphere->size;
+	double discriminant = b * b - a * c;
+	if (discriminant > 0)
 	{
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "accelerated"))
+		double temp = (-b - sqrt(discriminant)) / a;
+		if (temp < t_max && temp > t_min)
 		{
-			master->sdl.render_flag = ACCELERATED;
-			if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-				return (WORK);
+			rec->t = temp;
+			rec->p = point_at_parametr(rec->t, ray);
+			rec->normal = vec_3fdiv(vec_3sub(rec->p, sphere->position), sphere->size);
+			return (1);
 		}
-		else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "software"))
-			master->sdl.render_flag = SOFTWARE;
-		else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}"))
+		temp = (-b + sqrt(discriminant)) / a;
+		if (temp < t_max && temp > t_min)
 		{
-			master->sdl.render_flag = SOFTWARE;
-			return (WORK);
-		}
-		else if (*(split + (*i)) && ft_strcmp(*(split + (*i)), "}"))
-		{
-			master->sdl.render_flag = SOFTWARE;
-			master->error_flag = BROKEN;
-			return (BROKEN);
+			rec->t = temp;
+			rec->p = point_at_parametr(rec->t, ray);
+			rec->normal = vec_3fdiv(vec_3sub(rec->p, sphere->position), sphere->size);
+			return (1);
 		}
 	}
-	master->error_flag = BROKEN;
-	return (BROKEN);
+	return (0);
 }
 
-void 		ft_set_scene(t_master *master, char **split, uint16_t *i)
+int8_t	ft_hit_list(t_hitable_list *hit_list, t_ray *ray,
+					  double t_min, double t_max, t_hit_record *rec)
 {
-	static uint8_t	set[MAXBASE] = {0, 0, 0};
-
-	if (master->error_flag == WORK)
+	t_hit_record temp_rec;
+	int8_t hit_anything = 0;
+	double closest_so_far = t_max;
+	for (int i = 0; i < hit_list->list_size; i++)
 	{
-		if (!ft_strcmp(*split, "name"))
-			set[NAME] = ft_set_name(master, split, i);
-		else if (!ft_strcmp(*split, "window"))
-			set[WINDOW] = ft_set_win(master, split, i);
-		else if (!ft_strcmp(*split, "render"))
-			set[RENDER] = ft_set_render(master, split, i);
-	}
-	if (ft_check_set_scene(set) == WORK)
-		master->init_flag = OBJECT;
-}
-
-void		ft_set_base(t_master *master, char *split)
-{
-	static int8_t braket = 0;
-	if (!ft_strcmp(split, "scene") && !braket)
-		braket = 1;
-	else if (!ft_strcmp(split, "{") && braket++)
-		master->init_flag = SCENE;
-	else if (master->init_flag == OBJECT && !ft_strcmp(split, "}") && braket == 2)
-		return ;
-	else
-		master->error_flag = BROKEN;
-}
-
-uint8_t		set_position(t_master *master, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{") && master->error_flag)
-	{
-		master->scene.cam.position.x = atof(*(split + ++(*i)));
-		master->scene.cam.position.y = atof(*(split + ++(*i)));
-		master->scene.cam.position.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_rotate(t_master *master, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{") && master->error_flag)
-	{
-		master->scene.cam.rotate.x = atof(*(split + ++(*i)));
-		master->scene.cam.rotate.y = atof(*(split + ++(*i)));
-		master->scene.cam.rotate.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_light_color(t_light *light, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		light->color.r = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.g = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.b = (uint8_t)atoi(*(split + ++(*i)));
-		light->color.a = 0;
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-uint8_t		set_light_position(t_light *light, char **split, uint16_t *i)
-{
-	if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{"))
-	{
-		light->position.x = atof(*(split + ++(*i)));
-		light->position.y = atof(*(split + ++(*i)));
-		light->position.z = atof(*(split + ++(*i)));
-		if (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "}"))
-			return (WORK);
-	}
-	return (BROKEN);
-}
-
-void		set_camera(t_master *master, char **split, uint16_t *i, int8_t	*flag)
-{
-	if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "position") && master->error_flag)
-	{
-		master->error_flag = set_position(master, split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "rotate") && master->error_flag)
-	{
-		master->error_flag = set_rotate(master, split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}") && master->error_flag)
-		*flag = -1;
-}
-
-t_light		*get_last_light(t_scene *scene)
-{
-	t_light *last;
-
-	last = scene->light;
-	if (last)
-	{
-		while (last->next)
-			last = last->next;
-	}
-	return (last);
-}
-
-void		set_light(t_master *master, char **split, uint16_t *i, int8_t	*flag)
-{
-	if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "position") && master->error_flag)
-	{
-		master->error_flag = set_light_position(get_last_light(&master->scene), split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "color") && master->error_flag)
-	{
-		master->error_flag = set_light_color(get_last_light(&master->scene), split, i);
-		return ;
-	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "}") && master->error_flag)
-		*flag = -1;
-}
-
-void	get_light(t_light **head)
-{
-	t_light *back;
-	t_light *light;
-
-	if (!head)
-		return ;
-	if (!(*head))
-	{
-		light = (t_light*)malloc(sizeof(t_light));
-		ft_bzero(light, sizeof(t_light));
-		(*head) = light;
-	}
-	else
-	{
-		back = (*head);
-		while (back->next)
-			back = back->next;
-		back->next = (t_light*)malloc(sizeof(t_light));
-		ft_bzero(back->next, sizeof(t_light));
-	}
-}
-
-void		ft_set_object(t_master *master, char **split, uint16_t *i)
-{
-	static int8_t	flag = -1;
-
-	if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "camera")) || flag == CAM)
-	{
-		if (flag != CAM && (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{")))
-			flag = CAM;
-		else if (flag == CAM)
-			set_camera(master, split, i, &flag);
-	}
-	else if ((*(split + (*i)) && !ft_strcmp(*(split + (*i)), "light")) || flag == LIGHT)
-	{
-		if (flag != LIGHT && (*(split + ++(*i)) && !ft_strcmp(*(split + (*i)), "{")))
+		if (ft_hit_list(&hit_list[i], ray, t_min, closest_so_far, &temp_rec))
 		{
-			flag = LIGHT;
-			get_light(&master->scene.light);
+			hit_anything = 1;
+			closest_so_far = temp_rec.t;
+			*rec = temp_rec;
 		}
-		else if (flag == LIGHT)
-			set_light(master, split, i, &flag);
 	}
-	else if (*(split + (*i)) && !ft_strcmp(*(split + (*i)), "object"))
-		master->init_flag = SHAPE;
-	else if (flag == -1)
-		master->error_flag = BROKEN;
+	return (hit_anything);
 }
 
-void		ft_set_shape(t_master *master, char **split, uint16_t *i)
+t_v3d	ray_color(t_ray *ray, t_object *sphere)
 {
-	printf("SHAPE------------------\n");
-	master->error_flag = BROKEN;
-	static int8_t	flag = -1;
-	printf("=======%s======\n", split[*i]);
-
+	double t = ft_hit_sphere_one(&sphere->position, sphere->size, ray);
+//	double t = ft_hit_sphere(ray, 0,1,NULL,sphere);
+	if (t > 0.0)
+	{
+		t_v3d back = {0, 0, -1};
+		t_v3d N = vec_3norm(vec_3sub(point_at_parametr(t, ray), back));
+		t_v3d tmp = {N.x + 1, N.y + 1, N.z + 1};
+		return (vec_3fmul(tmp, 0.5));
+	}
+	t_v3d unit_direction;
+	unit_direction = vec_3norm(ray->direction);
+	t = 0.5 * (unit_direction.y + 1.0);
+	t_v3d A = {1.0, 1.0, 1.0};
+	t_v3d B = {0.5, 0.7, 1.0};
+	A = vec_3fmul(A, 1.0 - t);
+	B = vec_3fmul(B, t);
+	return (vec_3add(A, B));
 }
