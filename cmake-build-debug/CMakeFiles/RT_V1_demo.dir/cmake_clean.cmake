@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RT_V1_demo.dir/set_object_var.c.o"
   "CMakeFiles/RT_V1_demo.dir/defolt_setting.c.o"
   "CMakeFiles/RT_V1_demo.dir/render.c.o"
+  "CMakeFiles/RT_V1_demo.dir/sphere.c.o"
   "RT_V1_demo.pdb"
   "RT_V1_demo"
 )

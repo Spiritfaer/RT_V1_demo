@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/istalevs/CLionProjects/RT_V1_demo/set_light.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_light.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/set_object_var.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_object_var.c.o"
   "/Users/istalevs/CLionProjects/RT_V1_demo/set_scene.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/set_scene.c.o"
+  "/Users/istalevs/CLionProjects/RT_V1_demo/sphere.c" "/Users/istalevs/CLionProjects/RT_V1_demo/cmake-build-debug/CMakeFiles/RT_V1_demo.dir/sphere.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

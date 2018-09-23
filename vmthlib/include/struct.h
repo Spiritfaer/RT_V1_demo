@@ -33,6 +33,7 @@ enum e_color	{RED, GREEN, BLUE, ALPHA, RGBA};
 # define MAX_SCREEN_HEIGHT 840
 # define MIN_SCREEN_HEIGHT 480
 # define ERROR_FD 1
+# define EPSILON 1e-6
 
 # define POS 0x01
 # define ROT 0x02
@@ -78,25 +79,6 @@ typedef struct		s_v3d
 }					t_v3d;
 #endif
 
-typedef struct		s_ray
-{
-	t_v3d			origin;
-	t_v3d			direction;
-}					t_ray;
-
-typedef struct		s_hitable_list
-{
-	struct s_hitable_list 	**list;
-	int 					list_size;
-}					t_hitable_list;
-
-typedef struct		s_hit_record
-{
-	double 			t;
-	t_v3d			p;
-	t_v3d			normal;
-}					t_hit_record;
-
 typedef struct		s_cam
 {
 	t_v3d			position;
@@ -111,8 +93,16 @@ typedef struct 		s_light
 	struct s_light	*next;
 }					t_light;
 
+typedef struct		s_sphere
+{
+	t_v3d			centr;
+	double 			radius;
+	SDL_Color		color;
+}					t_sphere;
+
 typedef struct		s_object
 {
+	void			*data;
 	int8_t			type;
 	t_v3d			position;
 	t_v3d			rotate;

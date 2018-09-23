@@ -61,11 +61,38 @@ void	ft_render(t_master *master)
 	SDL_DestroyTexture(texture);
 }
 
+void	new_sphere(t_object *obj)
+{
+	t_sphere *new;
+
+	new = (t_sphere*)malloc(sizeof(t_sphere));
+	new->centr = obj->position;
+	new->radius = obj->size;
+	new->color = obj->color;
+	obj->data = new;
+}
+
+void	set_obj_date(t_object *obj)
+{
+	if (obj->type == SPHERE)
+		new_sphere(obj);
+}
+
+void	ft_pre_loop(t_master *master)
+{
+	t_object *tmp = master->scene.object;
+	while (tmp)
+	{
+		set_obj_date(tmp);
+		tmp = tmp->next;
+	}
+}
+
 int8_t	process(t_master *master)
 {
 	if (ft_init(&master->sdl) < 1)
 		return (BROKEN);
-
+	ft_pre_loop(master);
 	while (master->sdl.loop)
 	{
 		events(&master->sdl);

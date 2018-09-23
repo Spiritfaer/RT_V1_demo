@@ -420,6 +420,33 @@ set_scene.c.s:
 	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/set_scene.c.s
 .PHONY : set_scene.c.s
 
+sphere.o: sphere.c.o
+
+.PHONY : sphere.o
+
+# target to build an object file
+sphere.c.o:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/sphere.c.o
+.PHONY : sphere.c.o
+
+sphere.i: sphere.c.i
+
+.PHONY : sphere.i
+
+# target to preprocess a source file
+sphere.c.i:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/sphere.c.i
+.PHONY : sphere.c.i
+
+sphere.s: sphere.c.s
+
+.PHONY : sphere.s
+
+# target to generate assembly for a file
+sphere.c.s:
+	$(MAKE) -f CMakeFiles/RT_V1_demo.dir/build.make CMakeFiles/RT_V1_demo.dir/sphere.c.s
+.PHONY : sphere.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -462,6 +489,9 @@ help:
 	@echo "... set_scene.o"
 	@echo "... set_scene.i"
 	@echo "... set_scene.s"
+	@echo "... sphere.o"
+	@echo "... sphere.i"
+	@echo "... sphere.s"
 .PHONY : help
 
 
